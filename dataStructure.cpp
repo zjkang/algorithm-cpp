@@ -1,6 +1,10 @@
 // array
 
+// vector
 
+// list
+
+// priority queue
 
 // -----------------------------------------------------------
 // hash map
@@ -10,6 +14,15 @@ for (auto a : map1) { // key -> a.first, value -> a.second
   results.push_back(a.second);
 }
 unordered_map<string, int> map2; // default value to 0?
+
+// set
+
+// sorting
+
+// algorithm & function
+// binary_search
+
+
 
 
 

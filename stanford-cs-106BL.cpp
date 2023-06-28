@@ -66,6 +66,18 @@ auto calculateSum(const vector<string>& v) {
 }
 
 // make_pair/tuple (c++11) automatically deduces the type!
+pair<int, int> findPriceRange(int dist) {
+  int min = static_cast<int>(dist * 0.08 + 100);
+  int max = static_cast<int>(dist * 0.36 + 750);
+  return make_pair(min, max);
+}
+pair<int, int> p = findPriceRange(dist);
+p.first; p.second;
+// c++ 17 allows structured bindings, unpack the variables in a pair
+auto [min, max] = findPriceRange(dist);
+
+
+
 
 
 

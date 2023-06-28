@@ -1,3 +1,14 @@
+// c++ modern principles
+
+// stream
+ostringstream oss("");
+istringstream iss("16.5 ounces");
+double amount;
+string unit;
+iss >> amount >> unit;
+
+// state bits
+
 // array
 
 // vector
@@ -27,12 +38,23 @@ int sum = std:accumulate(vec.begin(), vec.end(), 0);
 // -----------------------------------------------------------
 // hash map
 // https://cplusplus.com/reference/unordered_map/unordered_map/
+// APIs:
 unordered_map<string,vector<string>> map1; // default value to empty vector<stinrg>?
+unordered_map<string, int> map2; // default value to 0
+
 for (auto a : map1) { // key -> a.first, value -> a.second
   results.push_back(a.second);
 }
-unordered_map<string, int> map2; // default value to 0?
+map1["a"] = {"1","2"};
+if (map1.find("a")!=Map.end()) {
+}
 
+
+
+
+
+
+// -----------------------------------------------------------
 // set
 
 // sorting

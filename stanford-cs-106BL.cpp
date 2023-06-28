@@ -76,6 +76,8 @@ p.first; p.second;
 // c++ 17 allows structured bindings, unpack the variables in a pair
 auto [min, max] = findPriceRange(dist);
 
+// initializer constructor
+// initializer list
 
 
 

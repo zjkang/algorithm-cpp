@@ -80,7 +80,12 @@ auto [min, max] = findPriceRange(dist);
 // initializer list
 
 
+// std::vector
+vector<int> arr;
+arr.push_back(1);
+// arr[100] does not throw out_of_range exception, whereas it returns unexpected value (0)
 
+deque<int> deque;
 
 
 

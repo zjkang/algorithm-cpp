@@ -87,6 +87,17 @@ arr.push_back(1);
 
 deque<int> deque;
 
+map<string, int> freqMap;
+freqMap[k]; // not exist: defalut initialize it 
+freqMap.get(k); // not exist: throw an exception
+
+freqMap.count(response); // return 0, 1 or multiple duplicated keys
+freqMap.containsKey(response); // C++20
+
+
+
+
+
 
 
 

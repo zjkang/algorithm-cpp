@@ -1,5 +1,25 @@
+// long name type usage
+typedef long long ll;
+ll a = 0;
+
+
+// ----------------------------------------------
+// binary search
+vector<int>& packages;
+int val = 10;
+auto iterLower = lower_bound(packages.begin(), packages.end(), val); // the first iterator >= val
+auto iterUpper = upper_bound(packages.begin(), packages.end(), val)); // the first iterator > val
+int offsetLower = prev(iter) - packages.begin();
+
+
+// ----------------------------------------------
+// binary search
+
+
+
 // c++ modern principles
 
+// ----------------------------------------------
 // stream
 ostringstream oss("");
 istringstream iss("16.5 ounces");

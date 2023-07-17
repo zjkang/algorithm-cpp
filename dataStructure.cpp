@@ -17,6 +17,17 @@ static bool cmp(vector<int>&a, vector<int>&b) {
 // < == >
 [](auto& a, auto& b) { return a[1] < b[1]; }
 
+ 
+// ----------------------------------------------
+// stream
+ostringstream oss("");
+istringstream iss("16.5 ounces");
+double amount;
+string unit;
+iss >> amount >> unit;
+
+// state bits
+
 
 // ----------------------------------------------
 // Iterator
@@ -51,7 +62,8 @@ int offsetLower = prev(iter) - packages.begin();
 vector<vector<int>> events;
 sort(events.begin(), events.end(), [](auto &a, auto& b) { return a[1] < b[1]; }); // sorting by index 1
 events.insert(events.begin(), events[0]); // insert
-events.push_back();
+events.push_back(); 
+events.pop_back();
 events.size();
 events.empty();
 
@@ -79,6 +91,10 @@ for (const auto& val : vec) {
 // p3 (stl)
 vector<int> vec = {1,2,3};
 int sum = std:accumulate(vec.begin(), vec.end(), 0);
+
+// 2d vector
+int rows = 10, cols = 5;
+vector<vector<int>> dimens(rows, vector<int>(cols, val));
 
 
 // ----------------------------------------------
@@ -126,15 +142,9 @@ for (int n : data) {
 pq.top(), pq.empty(), pq.size(), pq.push(), pq.pop()
 
 
-// ----------------------------------------------
-// stream
-ostringstream oss("");
-istringstream iss("16.5 ounces");
-double amount;
-string unit;
-iss >> amount >> unit;
+// ----------------------------------------------------------
 
-// state bits
+
 
 // -----------------------------------------------------------
 // hash map

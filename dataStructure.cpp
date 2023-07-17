@@ -2,6 +2,9 @@
  Include most frequent c++ usage with modern principles for leetcode algorithm
  */
 
+// null pointer
+int* a = NULL; // or prefer to use 
+int* b = nullptr;
 
 // long name type usage
 typedef long long LL;
@@ -143,6 +146,15 @@ pq.top(), pq.empty(), pq.size(), pq.push(), pq.pop()
 
 
 // ----------------------------------------------------------
+// stack
+stack<int> s;
+s.push(1);
+s.top();
+s.pop();
+s.empty();
+
+
+
 
 
 

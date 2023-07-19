@@ -134,9 +134,9 @@ vector<vector<int>> dimens(rows, vector<int>(cols, val));
 ```
 
 
-### vector 
+### priority queue 
 
-- priority queue (https://en.cppreference.com/w/cpp/container/priority_queue)
+- https://en.cppreference.com/w/cpp/container/priority_queue
 
 ```c++
 // defalt to max priority heap
@@ -192,25 +192,39 @@ pq.top(), pq.empty(), pq.size(), pq.push(), pq.pop()
 ```
 
 
-// ----------------------------------------------------------
-// stack
+### stack
+
+```c++
 stack<int> s;
 s.push(1);
 s.top();
 s.pop();
 s.empty();
+```
 
-// ----------------------------------------------------------
-// queue (https://en.cppreference.com/w/cpp/container/queue)
+
+### queue 
+- https://en.cppreference.com/w/cpp/container/queue
+
+```c++
 queue<int> q;
 q.front(); 
 q.push(u);
 q.pop();
+```
 
 
-// ----------------------------------------------------------
-// deque (https://cplusplus.com/reference/deque/deque/)
+### deque 
+- https://cplusplus.com/reference/deque/deque/
+
+```c++
 deque<int>q;
+q.front(); q.back();
+q.push_front(); q.push_back();
+q.pop_front(); q.pop_back();
+```
+
+
 
 
 
@@ -229,10 +243,6 @@ for (auto a : map1) { // key -> a.first, value -> a.second
 map1["a"] = {"1","2"};
 if (map1.find("a")!=Map.end()) {
 }
-
-
-
-
 
 
 // -----------------------------------------------------------

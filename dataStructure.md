@@ -1,16 +1,21 @@
-/* 
- Include most frequent c++ usage with modern principles for leetcode algorithm
- */
+# C++ data structure
 
+Include most frequent c++ usage with modern principles for leetcode algorithm
+
+```c++
 // null pointer
 int* a = NULL; // or prefer to use 
 int* b = nullptr;
+```
 
+```c++
 // long name type usage
 typedef long long LL;
 typedef pair<LL, LL> PLL;
 LL a = 0;
+```
 
+```c++
 // apply lambda function (https://en.cppreference.com/w/cpp/language/lambda)
 // format: [captures](parameters) {body}
 // e.g.,
@@ -19,24 +24,40 @@ static bool cmp(vector<int>&a, vector<int>&b) {
 }
 // < == >
 [](auto& a, auto& b) { return a[1] < b[1]; }
+```
+
+```c++
+ // pair<> type
+ pair<int, int> pair = make_pair(1, 2);
+```
 
  
-// ----------------------------------------------
-// stream
+### Stream
+
+```c++
 ostringstream oss("");
 istringstream iss("16.5 ounces");
 double amount;
 string unit;
 iss >> amount >> unit;
+```
 
+- stream state bit
+
+```
 // state bits
+```
 
 
-// ----------------------------------------------
-// Iterator
-// https://cplusplus.com/reference/iterator/
-// Input (Read)    <-- Forward   <-- Bidirectional  <-- Random Access
-// Output (Write)
+### Iterator
+
+- https://cplusplus.com/reference/iterator/
+
+Input (Read)    <-- Forward   <-- Bidirectional  <-- Random Access
+
+Output (Write)
+
+```c++
 // begin, end, prev, next, back_inserter
 int foo[] = {10,20,30,40,50};
 std::vector<int> bar;
@@ -44,11 +65,15 @@ std::vector<int> bar;
 for (auto it = std::begin(foo); it!=std::end(foo); ++it) {
     bar.push_back(*it);
 }
+```
 
 
-// ----------------------------------------------
-// binary search (lower_bound / upper_bound support comp)
-// https://en.cppreference.com/w/cpp/algorithm/lower_bound
+### binary search 
+
+- lower_bound / upper_bound support comp
+- https://en.cppreference.com/w/cpp/algorithm/lower_bound
+
+```c++
 // template< class ForwardIt, class T, class Compare >
 // ForwardIt lower_bound(
 //     ForwardIt first, ForwardIt last, const T& value, Compare comp );
@@ -58,10 +83,13 @@ int val = 10;
 auto iterLower = lower_bound(packages.begin(), packages.end(), val); // the first iterator >= val
 auto iterUpper = upper_bound(packages.begin(), packages.end(), val)); // the first iterator > val
 int offsetLower = prev(iter) - packages.begin();
+```
 
 
-// ----------------------------------------------
-// vector (https://cplusplus.com/reference/vector/vector/)
+### vector 
+- https://cplusplus.com/reference/vector/vector/
+
+```c++
 vector<vector<int>> events;
 sort(events.begin(), events.end(), [](auto &a, auto& b) { return a[1] < b[1]; }); // sorting by index 1
 events.insert(events.begin(), events[0]); // insert
@@ -69,7 +97,9 @@ events.push_back();
 events.pop_back();
 events.size();
 events.empty();
+```
 
+```c++
 // https://en.cppreference.com/w/cpp/container/vector/emplace_back
 // no need to create a temporary copy constructor as in push_back
 // Person(string name, int age);
@@ -77,8 +107,9 @@ person = Person("abc", 10);
 events.push_back(Person("abc", 10));
 // < == >
 events.emplace_back("abc", 10);
+```
 
-// vector
+```c++
 // p1
 vector<int> vec = {1,2,3};
 int sum = 0;
@@ -94,10 +125,13 @@ for (const auto& val : vec) {
 // p3 (stl)
 vector<int> vec = {1,2,3};
 int sum = std:accumulate(vec.begin(), vec.end(), 0);
+```
 
+```c++
 // 2d vector
 int rows = 10, cols = 5;
 vector<vector<int>> dimens(rows, vector<int>(cols, val));
+```
 
 
 // ----------------------------------------------
@@ -153,6 +187,17 @@ s.top();
 s.pop();
 s.empty();
 
+// ----------------------------------------------------------
+// queue (https://en.cppreference.com/w/cpp/container/queue)
+queue<int> q;
+q.front(); 
+q.push(u);
+q.pop();
+
+
+// ----------------------------------------------------------
+// deque 
+deque<int>q;
 
 
 

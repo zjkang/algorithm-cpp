@@ -230,24 +230,34 @@ q.pop_front(); q.pop_back();
 
 
 
-// -----------------------------------------------------------
-// hash map
-// https://cplusplus.com/reference/unordered_map/unordered_map/
-// APIs:
+### hash map
+
+- https://cplusplus.com/reference/unordered_map/unordered_map/
+
+```c++
 unordered_map<string,vector<string>> map1; // default value to empty vector<stinrg>?
 unordered_map<string, int> map2; // default value to 0
 
-for (auto a : map1) { // key -> a.first, value -> a.second
+// key -> a.first, value -> a.second
+for (auto a : map1) { 
   results.push_back(a.second);
 }
+
 map1["a"] = {"1","2"};
-if (map1.find("a")!=Map.end()) {
+if (map1.find("a")!=map1.end()) {
 }
+
+map1.count("a");
+```
+
+
+### tree map
+
 
 
 // -----------------------------------------------------------
 // set
-// sorting
+
 // algorithm & function
 
 

@@ -134,8 +134,11 @@ vector<vector<int>> dimens(rows, vector<int>(cols, val));
 ```
 
 
-// ----------------------------------------------
-// priority queue (https://en.cppreference.com/w/cpp/container/priority_queue)
+### vector 
+
+- priority queue (https://en.cppreference.com/w/cpp/container/priority_queue)
+
+```c++
 // defalt to max priority heap
 // template<
 //     class T,
@@ -148,13 +151,17 @@ std::priority_queue<int> q1; // Max priority queue
 for (int n : data) {
     q1.push(n);
 }
+```
 
+```c++
 // Min priority queue
 // std::greater<int> makes the max priority queue act as a min priority queue
 std::priority_queue<int, std::vector<int>, std::greater<int>> minq1(data.begin(), data.end());
 // Second way to define a min priority queue
 std::priority_queue minq2(data.begin(), data.end(), std::greater<int>());
+```
 
+```c++
 // Using a custom function object to compare elements.
 struct
 {
@@ -162,21 +169,27 @@ struct
 } customLess;
 std::priority_queue minq3(data.begin(), data.end(), customLess); // Min priority queue
 
+```c++
 // Using lambda to compare elements.
 auto cmp = [](int left, int right) { return left < right; };
 std::priority_queue<int, std::vector<int>, decltype(cmp)> q5(cmp); // Max priority queue
 for (int n : data) {
     q5.push(n);
 }
+
+// result
 // data:   1 8 5 6 3 4 0 9 7 2
 // q1:     9 8 7 6 5 4 3 2 1 0
 // minq1:  0 1 2 3 4 5 6 7 8 9
 // minq2:  0 1 2 3 4 5 6 7 8 9
 // minq3:  0 1 2 3 4 5 6 7 8 9
 // q5:     9 8 7 6 5 4 3 2 1 0
+```
 
+```c++
 // APIs
 pq.top(), pq.empty(), pq.size(), pq.push(), pq.pop()
+```
 
 
 // ----------------------------------------------------------
@@ -196,7 +209,7 @@ q.pop();
 
 
 // ----------------------------------------------------------
-// deque 
+// deque (https://cplusplus.com/reference/deque/deque/)
 deque<int>q;
 
 

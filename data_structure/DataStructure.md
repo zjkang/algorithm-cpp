@@ -1,10 +1,5 @@
 # C++ data structure
 
-[Stream](https://github.com/zjkang/algorithm-cpp/blob/main/dataStructure.md#stream)
-
-
-# 
-
 Include most frequent c++ usage with modern principles for leetcode algorithm
 
 ```c++

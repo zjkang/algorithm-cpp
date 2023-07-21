@@ -1,3 +1,5 @@
+【toc]
+
 # C++ data structure
 
 Include most frequent c++ usage with modern principles for leetcode algorithm

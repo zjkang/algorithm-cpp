@@ -1,6 +1,9 @@
-【toc]
-
 # C++ data structure
+
+[Stream](https://github.com/zjkang/algorithm-cpp/blob/main/dataStructure.md#stream)
+
+
+# 
 
 Include most frequent c++ usage with modern principles for leetcode algorithm
 
@@ -15,7 +18,12 @@ int* b = nullptr;
 typedef long long LL;
 typedef pair<LL, LL> PLL;
 LL a = 0;
+
+// modern c++ 
+using LL = long long;
 ```
+
+
 
 ```c++
 // apply lambda function (https://en.cppreference.com/w/cpp/language/lambda)

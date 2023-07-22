@@ -1,19 +1,22 @@
 // function template
 
-// python version
-// father = [0] * n
-// for i in range(n):
-//     father[i] = i
+vector<int>Father;
+int N = s.size();
+Father.resize(N);
+for (int i=0; i<N; i++)
+    Father[i] = i;
 
-// def find_father(x):
-//     if father[x] != x:
-//         father[x] = find_father(father[x])
-//     return father[x]
+int FindFather(int x) {
+    if (Father[x]!=x)
+        Father[x] = FindFather(Father[x]);
+    return Father[x];
+}
 
-// def union(x, y):
-//     x = find_father(x)
-//     y = find_father(y)
-//     if x < y:
-//         father[y] = x
-//     else:
-//         father[x] = y
+void Union(int x, int y) {
+    x = Father[x];
+    y = Father[y];
+    if (x<y)
+        Father[y] = x;
+    else
+        Father[x] = y;
+}

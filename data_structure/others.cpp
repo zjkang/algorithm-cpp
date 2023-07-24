@@ -1,3 +1,6 @@
+// int to long long
+int a; -> (long long) a;
+
 // null pointer
 int* a = NULL; // or prefer to use 
 int* b = nullptr;

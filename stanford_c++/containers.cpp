@@ -2,7 +2,7 @@
 // Sequence Containers: sequences of elements
 // 
 
-
+std::vector<T>
 
 
 // adaptors

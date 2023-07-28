@@ -32,6 +32,9 @@ for (string elem : v) {
 
 v.push_front(); // can be very slow due to moving the all the elements
 
+v.at(i); // throws an exception
+v[i];    // causes undefined behavior!
+
 
 // note: vector outperforms a deque for element access. 
 deque<int> d = {1, 3, 7};
@@ -56,6 +59,16 @@ template<
   class Container = std::deque<T>
 > class queue;
 // provide functions: back(), front(), push_back(), pop_front()
+
+
+// -----------------------------------------
+// associative containers
+
+
+
+
+
+
 
 
 // iterators

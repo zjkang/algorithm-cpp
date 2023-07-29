@@ -64,14 +64,27 @@ template<
 // -----------------------------------------
 // associative containers
 
+// map, set keys are comparable using < (less than) operator
+std::map<T1, T2>
+std::set<T>
+// unordered_map, unordered_set based on hash function
+std::unordered_map<T1, T2>
+std::unordered_set<T>
+
+// https://en.cppreference.com/w/cpp/container/map
+
+// mymap.at(key) vs mymap[key]
+// mymap.count(key);
+
+// a set is just a specific case of a map that doesn't have a value
 
 
-
-
-
-
-
+// -----------------------------------------
 // iterators
+// Remember: Assoc. containers have no notion of a sequence/indexsing
+
+
+
 
 // functors
 

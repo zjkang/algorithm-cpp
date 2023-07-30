@@ -92,7 +92,20 @@ int numOccurrences(vector<int>& cont, int elemToCount) {
     return counter;
 }
 
+// map iterator
+// The iterator of a map<string, int> points to a std::pair<string, int>.
 
+std::pair<string, int> p;
+p.first = "Phone number";
+p.second = 6504550404;
+
+map<int, int> m;
+map<int, int>::iterator i = m.begin();
+map<int, int>::iterator end = m.end();
+while(i != end) {
+    cout << (*i).first << (*i).second << endl;
+    ++i;
+}
 
 
 

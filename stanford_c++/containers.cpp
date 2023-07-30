@@ -66,22 +66,34 @@ template<
 
 // map, set keys are comparable using < (less than) operator
 std::map<T1, T2>
-std::set<T>
+std::set<T> //  a set is just a specific case of a map that doesn't have a value
 // unordered_map, unordered_set based on hash function
 std::unordered_map<T1, T2>
 std::unordered_set<T>
 
 // https://en.cppreference.com/w/cpp/container/map
-
 // mymap.at(key) vs mymap[key]
 // mymap.count(key);
 
-// a set is just a specific case of a map that doesn't have a value
 
 
 // -----------------------------------------
 // iterators
 // Remember: Assoc. containers have no notion of a sequence/indexsing
+
+// vector iterator
+int numOccurrences(vector<int>& cont, int elemToCount) {
+    int counter = 0;
+    vector<int>::iterator iter;
+    for(iter = cont.begin(); iter != cont.end(); ++iter) {
+    if(*iter == elemToCount)
+        ++counter;
+    }
+    return counter;
+}
+
+
+
 
 
 

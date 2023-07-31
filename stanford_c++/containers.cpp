@@ -74,12 +74,18 @@ std::unordered_set<T>
 // https://en.cppreference.com/w/cpp/container/map
 // mymap.at(key) vs mymap[key]
 // mymap.count(key);
-
+mymap.insert({2, 30}); // insert by initializer list
 
 
 // -----------------------------------------
 // iterators
 // Remember: Assoc. containers have no notion of a sequence/indexsing
+
+// Four essential iterator operations:
+// Create iterator
+// Dereference iterator to read value currently pointed to
+// Advance iterator
+// Compare against another iterator (especially .end() iterator)
 
 // vector iterator
 int numOccurrences(vector<int>& cont, int elemToCount) {
@@ -95,9 +101,17 @@ int numOccurrences(vector<int>& cont, int elemToCount) {
 // map iterator
 // The iterator of a map<string, int> points to a std::pair<string, int>.
 
+// pair
 std::pair<string, int> p;
 p.first = "Phone number";
 p.second = 6504550404;
+
+// Quicker ways to make a pair:
+std::pair<string, int> p{"Phone number", 6507232300};
+std::make_pair("Phone number", 6507232300);
+// make_pair automatically deduces the type!
+//     This is a great place to use auto!
+// auto time = std::make_pair(1, 45);
 
 map<int, int> m;
 map<int, int>::iterator i = m.begin();
@@ -107,11 +121,91 @@ while(i != end) {
     ++i;
 }
 
+// set iterator
+std::set<int>::iterator iter = mySet.begin();
+int val = *iter;
+iter++; // ++iter;
+if (iter == mySet.end()) return;
+
+// multimaps
+// Doesn’t have [] operator! 
+std::multimap<int, int> myMMap;
+myMMap.insert(make_pair(3, 3));
+myMMap.insert({3, 12}); // shorter syntax
+cout << myMMap.count(3) << endl; // prints 2
+
+// iterator uses
+// sorting
+std::sort(vec.begin(), vec.end());
+
+const int elementToFind = 5;
+vector<int>::iterator it = std::find(vec.begin(), vec.end(), elementToFind);
+// find vs. count
+// myMap.count(key) == 0;
+// Does it work???
+std::find(myMap.begin(), myMap.end(), key);
+if (find(myMap.begin(), myMap.end(), key) == myMap.end())
+    cout << “Not Found”;
+
+set<int>::iterator iter = mySet.lower_bound(7);
+set<int>::iterator end = mySet.lower_bound(26);
+while (iter != end) {
+    cout << *i << endl;
+    ++i;
+}
+
+// range based for loop
+map<string, int> myMap;
+for(auto thing : myMap) {
+    doSomething(thing.first, thing.second);
+}
+// < == >
+map<string, int> myMap;
+for(auto iter = myMap.begin(); iter != myMap.end(); ++iter) {
+    auto thing = *iter;
+    doSomething(thing.first, thing.second);
+}
+
+
+// Struct
+// Declaring the struct definition
+struct Object {
+    type var1;
+    type var2;
+}
+// Initializing a struct object using uniform initialization
+struct Object objName{value1, value2};
+// “struct” keyword is optional in C++
+// Operating on the struct object - in this case, assigning a
+value
+objName.var1 = newvalue1;
+
+struct SimpleGraph { 
+    vector<Node> nodes; 
+    vector<Edge> edges; 
+}
+struct Node {
+    double x;
+    double y;
+}
+struct SimpleGraph graph{};
+// How would you add a Node to the graph?
+graph.nodes.push_back( {someXValue, someYValue} );
+// automatically creates Node object + adds to vector
+
+
+// iterator types
+There are 5 different types of iterators!
+1. Input
+2. Output
+3. Forward
+4. Bidirectional
+5. Random access
 
 
 
 
-
+// -----------------------------------------
 // functors
 
 

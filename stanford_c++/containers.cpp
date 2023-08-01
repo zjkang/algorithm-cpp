@@ -190,19 +190,84 @@ struct Node {
 }
 struct SimpleGraph graph{};
 // How would you add a Node to the graph?
-graph.nodes.push_back( {someXValue, someYValue} );
+graph.nodes.push_back( {someXValue, someYValue} ); // can use initializer list
 // automatically creates Node object + adds to vector
 
 
-// iterator types
-There are 5 different types of iterators!
-1. Input
-2. Output
-3. Forward
-4. Bidirectional
-5. Random access
+// -----------------------------------------
+// Iterator Types
+
+// There are 5 different types of iterators!
+// 1. Input
+// 2. Output
+// 3. Forward
+// 4. Bidirectional
+// 5. Random access
+
+// 1. For sequential, single-pass input:
+// Read only i.e. can only be dereferenced on right side of expression.
+vector<int> v = ...
+vector<int>::iterator itr = v.begin();
+int val = *itr;
+// use cases:
+// - find or count
+// template<class InputIt, class T>
+// InputIt find(InputIt first, InputIt last, const T& value);
+// - input streams
 
 
+// 2. For sequential, single-pass output:
+// Write only i.e. can only be dereferenced on left side of expression.
+vector<int> v = ...
+vector<int>::iterator itr = v.begin();
+*itr = 12;
+// use cases:
+// - copy: 
+// template<class InputIt, class OutputIt>
+// OutputIt copy(InputIt first, InputIt last, OutputIt d_first);
+// - output stream
+
+
+// 3. Forward Iterators
+// Combines input and output iterators, + can make multiple passes.
+// Can read from and write to (if not const iterator).
+vector<int> v = ...
+vector<int>::iterator itr = v.begin();
+int val = *itr;
+*itr = 12;
+// use cases:
+// - replace:
+// template<class ForwardIt, class T>
+// void replace(ForwardIt first, ForwardIt last, const T& old_value, const T& new_value);
+// - forward_list (sequence containers, think of as singly-linked list)
+
+
+// 4. Bidirectional Iterators
+// Same as forward iterators, + can go backwards with the decrement operator (--).
+vector<int> v = ...
+vector<int>::iterator itr = v.begin();
+++itr;
+int val = *itr;
+--itr;
+int val2 = *itr;
+// use cases:
+// - reverse
+template<class BidirIt>
+void reverse(BidirIt first, BidirIt last);
+// - std::map, std::set
+// - std::list (sequence container, think of as doubly-linked list)
+
+
+// 5. Random Access Iterators
+// Same as bidirectional iterators, + can be incremented or decremented by arbitrary amounts using + and -.
+vector<int> v = ...
+vector<int>::iterator itr = v.begin();
+int val = *itr;
+itr = itr + 3;
+int val2 = *itr;
+// use cases:
+// - std::vector, std::deque, std::string
+// - Pointers
 
 
 // -----------------------------------------

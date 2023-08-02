@@ -101,6 +101,7 @@ int numOccurrences(vector<int>& cont, int elemToCount) {
 // map iterator
 // The iterator of a map<string, int> points to a std::pair<string, int>.
 
+// ---------------------------------------------------
 // pair
 std::pair<string, int> p;
 p.first = "Phone number";
@@ -109,9 +110,19 @@ p.second = 6504550404;
 // Quicker ways to make a pair:
 std::pair<string, int> p{"Phone number", 6507232300};
 std::make_pair("Phone number", 6507232300);
-// make_pair automatically deduces the type!
-//     This is a great place to use auto!
-// auto time = std::make_pair(1, 45);
+// make_pair automatically deduces the type! This is a great place to use auto!
+auto time = std::make_pair(1, 45);
+
+int main() {
+    auto [min, max] = my_minmax(3, 6);
+    cout << min << endl; // 3
+    cout << max << endl; // 6
+}
+pair<int, int> my_minmax(int a, int b) {
+    if (a < b) return {a, b};
+    else return {b, a};
+}
+
 
 map<int, int> m;
 map<int, int>::iterator i = m.begin();
@@ -279,15 +290,43 @@ std::advance(iter, 4); // could also do iter += 4
 v.erase(iter); // cannot erase by index
 
 
-
-
-
-
-
-
-
 // -----------------------------------------
 // templates
+// The compiler literally replaces each template parameter with whatever you instantiate it with
+
+template <typename T>
+pair<T, T> my_minmax(T a, T b) {
+    if (a < b) return {a, b};
+    else return {b, a};
+}
+
+// Explicit Instantiation of Templates
+my_minmax<string>(“Anna”, “Avery”);
+// Compiler deduces; type deduction can’t read your mind
+my_minmax(3, 4);
+my_minmax(“Anna”, “Avery”); // Note: Compiler deduces T = char* (C-string) which causes comparing pointers, not what you want!
+
+template <typename InputIt, typename DataType>
+int countOccurences(InputIt begin, InputIt end, DataType val) {
+    int count = 0;
+    for (auto iter = begin; iter != end; ++iter) {
+        if (*iter == val) ++count;
+    }
+    return count;
+}
+
+template <typename ForwardIt, typename T>
+ForwardIt remove(ForwardIt first, ForwardIt last, const T& value) {
+     first = std::find(first, last, value);
+     if (first != last)
+          for(ForwardIt i = first; ++i != last; )
+               if (!(*i == value))
+      return first;
+}
+
+// c++20 concept lifting
+
+
 
 
 

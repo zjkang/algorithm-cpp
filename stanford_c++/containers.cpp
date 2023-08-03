@@ -327,14 +327,60 @@ ForwardIt remove(ForwardIt first, ForwardIt last, const T& value) {
 // c++20 concept lifting
 
 
-
-
-
 // -----------------------------------------
-// functors
+// functors | lambda functions | function pointers
+
+// lambda function
+// usages:
+// auto: We don’t know ask compiler
+// [limit]: the capture clause gives access to outside variables
+// auto val: parameter list, can use auto!
+// -> bool: return type, optional type
+auto isLessThanLimit = [limit](auto val) -> bool { return val < limit;
+}
+
+// capture by reference, value or everything
+// =: capture everything by value
+// &: capture everythign by reference
+// capture all by value, except teas is by reference
+auto func1 = [=, &teas](parameters) -> return-value { // body
+};
+// capture all by reference, except banned is by value
+auto func2 = [&, banned](parameters) -> return-value { // body
+};
+
+// FYI, std::function<R(Args...)> is a generic wrapper for all things callable. 
+// generally prefer auto or template deduction for functions, since std::function has a performance problem
+int main() {
+    std::function<void()> func1 = []() { return 137; };
+    std::function<bool(int)> func2 = isLessThanLimit;
+    // Question???
+    std::function< int(iterator, iterator, std::function<bool(int)>) >
+        = countOccurences< v.begin(), v.end(), func2 >; 
+}
+
+Lambdas are a type of function object (“functor”)
+{
+  auto mult = [](int param, int factor) {
+     return param * factor;
+  };
+  // call mult’s () operator, like a function
+  auto val = mult(3, 2);  // val is 6
+  // bind takes a functor and returns a functor
+  auto multBound = std::bind(mult, _1, 2);
+} // destructor for mult called
+
+auto isLessThan = [limit] (int val) {
+    return isLessThanLimit(val, limit);
+};
+// < == >
+bool isLessThanLimit(int val, int limit) {
+    return val < limit; // not out of scope, but...
+}
+auto isLessThan = std::bind(isLessThanLimit, _1, limit);
 
 
-// -----------------------------------------
+// -------------------------------------------------------------
 // stl algorithms
 const int kNumInts = 200;
 std::vector<int> vec(kNumInts);
@@ -342,11 +388,51 @@ std::generate(vec.begin(), vec.end(), rand);
 std::sort(vec.begin(), vec.end());
 std::copy(vec.begin(), vec.end(), std::ostream_iterator<int>(count, "\n"));
 
+// common algorithms
+std::sort
+std::nth_element
+std::stable_partition
+std::copy_if
+std::remove_if
+std::count_if
 
+struct Course {
+  string code;
+  double rating;
+};
+auto compRating = [](const auto& s1, const auto& s2) {
+    return s1.rating < s2.rating;
+};
+// O(N log N) sort
+std::sort(classes.begin(), classes.end(), compRating);
+// O(N), sorts so nth_element is in correct position, all elements smaller to left, larger to right
+Course median = *std::nth_element(classes.begin(), classes.end(), size/2, compRating);
+// Stable partition
+string dep = ”CS”;
+auto isDep = [dep](const auto& course) {
+   return course.name.size() >= dep.size &&
+          course.substr(0, dep.size()) == dep;
+};
+auto iter = std::stable_partition(courses.begin(), courses.end(), isDep);
+courses.erase(iter, courses.end());
 
+// We need a special iterator which extends the container
+// back_inserter supports to expand csCourses (assign space) from the back
+string dep = ”CS”;
+auto isDep = [dep](const auto& course) {
+   return course.name.size() >= dep.size &&
+          course.substr(0, dep.size()) == dep;
+};
+std::copy_if(csCourses.begin(), csCourses.end(), back_inserter(csCourses), isDep);
 
+// Stream iterators read from istreams or write to ostreams!
+std::copy_if(csCourses.begin(), csCourses.end(), std::ostream_iterator<Course>(cout, ”\n"), isDep);
 
-
-
+// std::remove does not change the size of the container!
+// The algorithm is not a member of std::vector (or any other collection) so it can’t change its size member.
+v.erase(
+    std::remove_if(v.begin(), v.end(), pred),
+    v.end()
+);
 
 

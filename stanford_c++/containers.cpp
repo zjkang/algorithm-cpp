@@ -336,21 +336,19 @@ ForwardIt remove(ForwardIt first, ForwardIt last, const T& value) {
 // [limit]: the capture clause gives access to outside variables
 // auto val: parameter list, can use auto!
 // -> bool: return type, optional type
-auto isLessThanLimit = [limit](auto val) -> bool { return val < limit;
-}
+auto isLessThanLimit = [limit](auto val) -> bool { return val < limit; }
 
 // capture by reference, value or everything
 // =: capture everything by value
 // &: capture everythign by reference
 // capture all by value, except teas is by reference
-auto func1 = [=, &teas](parameters) -> return-value { // body
-};
+auto func1 = [=, &teas](parameters) -> return-value { // body };
 // capture all by reference, except banned is by value
-auto func2 = [&, banned](parameters) -> return-value { // body
-};
+auto func2 = [&, banned](parameters) -> return-value { // body };
 
 // FYI, std::function<R(Args...)> is a generic wrapper for all things callable. 
-// generally prefer auto or template deduction for functions, since std::function has a performance problem
+// generally prefer auto or template deduction for functions
+// since std::function has a performance problem
 int main() {
     std::function<void()> func1 = []() { return 137; };
     std::function<bool(int)> func2 = isLessThanLimit;
@@ -359,7 +357,7 @@ int main() {
         = countOccurences< v.begin(), v.end(), func2 >; 
 }
 
-Lambdas are a type of function object (“functor”)
+// Lambdas are a type of function object (“functor”)
 {
   auto mult = [](int param, int factor) {
      return param * factor;
@@ -405,8 +403,10 @@ auto compRating = [](const auto& s1, const auto& s2) {
 };
 // O(N log N) sort
 std::sort(classes.begin(), classes.end(), compRating);
+
 // O(N), sorts so nth_element is in correct position, all elements smaller to left, larger to right
 Course median = *std::nth_element(classes.begin(), classes.end(), size/2, compRating);
+
 // Stable partition
 string dep = ”CS”;
 auto isDep = [dep](const auto& course) {
@@ -418,6 +418,7 @@ courses.erase(iter, courses.end());
 
 // We need a special iterator which extends the container
 // back_inserter supports to expand csCourses (assign space) from the back
+// Note: csCourses only cannot increse its space (not go beyond uninitialized memory)
 string dep = ”CS”;
 auto isDep = [dep](const auto& course) {
    return course.name.size() >= dep.size &&

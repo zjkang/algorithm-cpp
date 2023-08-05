@@ -281,14 +281,93 @@ int val2 = *itr;
 // - Pointers
 
 
-// erase in STL containers
+// ----------------------------------------------------------------
+// *** erase in STL containers
 
+// erase by iterator
 // compare with vector, deque and list for different iterator types
 vector<int> v{3, 1, 4, 1, 5, 2, 6};
 auto iter = v.begin();
 std::advance(iter, 4); // could also do iter += 4
 v.erase(iter); // cannot erase by index
 
+deque<int> d{3, 1, 4, 1, 5, 2, 6};
+auto iter = d.begin();
+std::advance(iter, 4);
+d.erase(iter);
+// alas, can’t erase by index
+// could also do iter += 4
+// {3, 1, 4, 1, 2, 6}
+
+list<int> l{3, 1, 4, 1, 5, 2, 6};
+auto iter = l.begin();
+std::advance(iter, 4);
+l.erase(iter);
+// alas, can’t erase by index
+
+set<int> s{1, 3, 5, 7, 9, 11};
+s.erase(3);
+s.erase(s.begin());
+// {1, 5, 7, 9, 11}
+// {5, 7, 9, 11}
+
+// invalidated iterators
+// Different containers have different rules for invalidated containers!
+// iterator to erasure point always invalidated
+// vector: all iterators after erasure point invalidated.
+// deque: all iterators invalidated
+// (unless erasure point was front or back)
+// list/set/map: all other iterators are still valid!
+
+
+// for vector
+// This code is buggy!
+void erase_all(vector<int>& vec, int val) {
+    for (auto iter = vec.begin(); iter != vec.end(); ++iter) {
+         if (*iter == val) {
+          vec.erase(iter);
+        }
+    } 
+}
+
+// This code is good! 
+// O(n^2)
+void erase_all(vector<int>& vec, int val) {
+  for (auto iter = vec.begin(); iter != vec.end();) { // don’t increment if something was erased
+    if (*iter == val) {
+      iter = vec.erase(iter); // erase returns valid iterator of element after the erased one; // this is kinda slow
+    } else {
+      ++iter; // only increment if nothing was erased
+    } 
+  }
+}
+
+// for map
+// This code is buggy!
+void erase_all_even_keys(map<int, int>& map, int val) {
+    for (auto iter = map.begin(); iter != map.end(); ++iter) { // incrementing invalidated iterator
+        if (iter->first == val) {
+          iter = map.erase(iter); // iter invalidated here
+        } 
+    }
+}
+
+// Equivalently, bad code in the Stanford library
+void erase_all_even_keys(map<int, int>& map, int val) { for (int key : map) {
+    if (map[key] == val) {
+       map.remove(key); // messes up the iterators!
+    }     
+  }
+}
+
+// This code is good!
+void erase_all_even_keys(map<int, int>& map, int val) { 
+    for (auto iter = map.begin(); iter != map.end();) {
+    } else {
+      ++iter;
+    } 
+  }
+}
 
 // -----------------------------------------
 // templates

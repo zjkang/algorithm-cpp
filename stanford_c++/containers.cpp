@@ -67,6 +67,7 @@ template<
 // map, set keys are comparable using < (less than) operator
 std::map<T1, T2>
 std::set<T> //  a set is just a specific case of a map that doesn't have a value
+
 // unordered_map, unordered_set based on hash function
 std::unordered_map<T1, T2>
 std::unordered_set<T>
@@ -82,11 +83,13 @@ mymap.insert({2, 30}); // insert by initializer list
 // Remember: Assoc. containers have no notion of a sequence/indexsing
 
 // Four essential iterator operations:
-// Create iterator
-// Dereference iterator to read value currently pointed to
-// Advance iterator
-// Compare against another iterator (especially .end() iterator)
+Create iterator
+std::set<int>::iterator iter = mySet.begin();
+Dereference iterator to read value currently pointed to int val = *iter;
+Advance iterator iter++; or ++iter;
+Compare against another iterator (especially .end() iterator) if (iter == mySet.end()) return;
 
+use the exact same code to perform a logical action, regardless of the data structure
 // vector iterator
 int numOccurrences(vector<int>& cont, int elemToCount) {
     int counter = 0;
@@ -400,11 +403,56 @@ ForwardIt remove(ForwardIt first, ForwardIt last, const T& value) {
      if (first != last)
           for(ForwardIt i = first; ++i != last; )
                if (!(*i == value))
-      return first;
+                  return first;
 }
 
+// InputIt must support
+// • copyassignment(iter=begin)
+// • prefixoperator(++iter)
+// • comparabletoend(begin!=end) • dereferenceoperator(*iter)
+// DataType must support • comparable to *iter
+
+    
 // c++20 concept lifting
 
+// SFINAE
+// Substitution Failure Is Not An Error
+// • When substituting the deduced types fails (in the immediate context) because the type doesn’t satisfy implicit interfaces, 
+//   this does not result in a compile error.
+// • Instead, this candidate function is not part of the viable function. The other candidates will still be processed.
+
+// Substitution passes if T has a member size
+// T = int (fail)
+// T = vector<int> (success)
+// T = vector<int>* (fail)
+template <typename T>
+auto printSize(const T& a) -> decltype(a.size()) {
+    cout << “printing with size member function: ”;
+    cout << a.size() << endl;
+    return a.size();
+  }
+
+// Power of SFINAE
+// ?????
+// std::enable_if<Predicate>
+// If Predicate is satisfied, proceed as normal.
+// If Predicate is not satisfied, purposely create a template error!
+
+// use tuple
+tuple<bool, int, int> mismatch(const vector<int>& vec1,
+                               const vector<int>& vec2)
+  size_t i = 0;
+  while (i < vec1.size() && vec1[i] == vec2[i]){
+++i; }
+  if (i == vec1.size()) return {false, 0, 0};
+  else return {true, vec1[i], vec2[i]};
+}
+
+// The signbit function can only be called if T is an arithmetic type.
+template <typename T, typename std::enable_if<std::is_arithmetic<T>, bool>::type>
+ signbit(T x) {
+      // implementation
+}
 
 // -----------------------------------------
 // functors | lambda functions | function pointers

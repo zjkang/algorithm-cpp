@@ -18,7 +18,7 @@ vector<int> v = {1, 3, 7};
 v.push_back(271);
 v.front();
 v.back();
-v.erase(v.begin());
+v.erase(v.begin()); // erase in the iterator
 v.pop_back();
 // no such thing as a sublist
 

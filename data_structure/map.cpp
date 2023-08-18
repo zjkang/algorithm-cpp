@@ -26,3 +26,18 @@ map1.count("a");
 
 map<int, int> map;
 auto lower_iter = map.lower_bound(1);
+
+// https://www.techiedelight.com/use-std-pair-key-std-map-cpp/
+// when pair is used as key
+// 1. Using default order
+
+
+// 2. Using a comparison object
+
+// 3. Specializing std::less function
+
+
+
+
+
+// ---------------------------------------------

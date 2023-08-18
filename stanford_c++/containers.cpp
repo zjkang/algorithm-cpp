@@ -43,6 +43,11 @@ d.push_front(-1);
 d.front();
 d.back();
 
+// diff between vector and deque
+// vector is the type of sequence that should be used by default
+// deque is the data structure of choice when most insertions and deletions take place 
+// at the beginning or at the end of the sequence.
+
 
 // -----------------------------------------
 // adaptors

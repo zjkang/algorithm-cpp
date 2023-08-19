@@ -77,6 +77,13 @@ std::set<T> //  a set is just a specific case of a map that doesn't have a value
 std::unordered_map<T1, T2>
 std::unordered_set<T>
 
+// You can define < and hash function operators for your own classes!
+
+
+
+
+
+    
 // https://en.cppreference.com/w/cpp/container/map
 // mymap.at(key) vs mymap[key]
 // mymap.count(key);

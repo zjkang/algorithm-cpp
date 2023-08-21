@@ -22,7 +22,6 @@ v.erase(v.begin()); // erase in the iterator
 v.pop_back();
 // no such thing as a sublist
 
-// vector:
 vector<int> v{1, 0, 6};
 v.push_back(-100);
 v.pop_back();
@@ -48,6 +47,10 @@ d.push_back(271);
 d.push_front(-1);
 d.front();
 d.back();
+
+deque<int> d{1, 0, 6}; - same as a vector
+d.push_front(42);
+d.pop_front();
 
 // diff between vector and deque
 // vector is the type of sequence that should be used by default

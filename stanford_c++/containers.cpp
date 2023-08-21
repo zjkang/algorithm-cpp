@@ -22,6 +22,12 @@ v.erase(v.begin()); // erase in the iterator
 v.pop_back();
 // no such thing as a sublist
 
+// vector:
+vector<int> v{1, 0, 6};
+v.push_back(-100);
+v.pop_back();
+v[3] fails silently! v.at(3) throws error
+
 // loop
 for (size_t i = 0; i < v.size(); ++i) {
     cout << v[i] << endl;

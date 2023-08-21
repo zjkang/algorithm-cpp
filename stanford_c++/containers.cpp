@@ -90,19 +90,14 @@ m.count(106);
 m.at(99) = “Hey”; // throws error
 m[99] = “Hey”; // creates new entry
 
+set<int> s{1, 0, 6}; // really a map to 0/1, without .at() and []
+
 // unordered_map, unordered_set based on hash function, hashed, fast for single elems
 // std::unordered_map<T1, T2>
 // std::unordered_set<T>
 
-
-
 // You can define < and hash function operators for your own classes!
 
-
-
-
-
-    
 // https://en.cppreference.com/w/cpp/container/map
 // mymap.at(key) vs mymap[key]
 // mymap.count(key);
@@ -242,6 +237,35 @@ graph.nodes.push_back( {someXValue, someYValue} ); // can use initializer list
 // -----------------------------------------
 // Iterator Types
 
+ Types:
+- input
+(one-pass, read-only)
+- output
+(one-pass, write-only)
+- forward
+- (multi-pass, read and
+write)
+- bidirectional (multi-pass, read and
+write, can decrement)
+- random access (multi-pass, read and
+write, can incr/decr by arbitrary amounts)
+
+Basic syntax:
+- set<int> s{1, 0, 6};
+- set<int>::iterator it = s.begin();
+- auto it2 = s.end();
+- ++it;
+- *it = 3;
+- if (it != it2) ...
+- map<int, string> m{{1, “Hi”}, {6, “Bye”}}; 
+- auto [key, val] = m.begin();
+- (m.begin())->first = 3
+for-each loop:
+- for (int i : s) ...
+is implemented as
+- for (auto it = s.begin(); it != s.end(); ++it) ...
+
+    
 // There are 5 different types of iterators!
 // 1. Input
 // 2. Output

@@ -67,24 +67,34 @@ template<
   class Container = std::deque<T>
 > class stack;
 // provide functions: back(), push_back(), pop_back()
+// stack:
+stack<int> s{1, 0, 6}; s.push(5); s.pop();
 
 template<
   class T,
   class Container = std::deque<T>
 > class queue;
 // provide functions: back(), front(), push_back(), pop_front()
+// queue: 
+queue<int> q{1, 0, 6}; q.push(5); q.pop();
 
 
 // -----------------------------------------
 // associative containers
 
-// map, set keys are comparable using < (less than) operator
-std::map<T1, T2>
-std::set<T> //  a set is just a specific case of a map that doesn't have a value
+// map, set keys are comparable using < (less than) operator; sorted, fast for range
+// std::map<T1, T2>
+// std::set<T> //  a set is just a specific case of a map that doesn't have a value
+map<int, string> m{{5, “Hi”}, {80, “Bye”}}; - m[106] = “C++”;
+m.count(106);
+m.at(99) = “Hey”; // throws error
+m[99] = “Hey”; // creates new entry
 
-// unordered_map, unordered_set based on hash function
-std::unordered_map<T1, T2>
-std::unordered_set<T>
+// unordered_map, unordered_set based on hash function, hashed, fast for single elems
+// std::unordered_map<T1, T2>
+// std::unordered_set<T>
+
+
 
 // You can define < and hash function operators for your own classes!
 

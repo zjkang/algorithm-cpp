@@ -96,7 +96,6 @@ m.at(99) = “Hey”; // throws error if key is not in map
 m[99] = “Hey”; // creates new entry
 m.insert({k,v});
 
-
 set<int> s{1, 0, 6}; // really a map to 0/1, without .at() and []
 s.insert(k);
 s.erase(k);
@@ -105,7 +104,10 @@ s.erase(k);
 // std::unordered_map<T1, T2>
 // std::unordered_set<T>
 
-// You can define < and hash function operators for your own classes!
+// Ordered maps/sets require a comparison operator to be defined
+   You can define < and hash function operators for your own classes!
+// Unordered maps/sets require a hash function to be defined.
+
 
 // https://en.cppreference.com/w/cpp/container/map
 // mymap.at(key) vs mymap[key]

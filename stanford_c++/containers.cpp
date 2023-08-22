@@ -85,12 +85,21 @@ queue<int> q{1, 0, 6}; q.push(5); q.pop();
 // map, set keys are comparable using < (less than) operator; sorted, fast for range
 // std::map<T1, T2>
 // std::set<T> //  a set is just a specific case of a map that doesn't have a value
-map<int, string> m{{5, “Hi”}, {80, “Bye”}}; - m[106] = “C++”;
+
+// Maps are implemented with pairs! (std::pair<const key, value>)
+// Note the const! Keys must be immutable.
+
+map<int, string> m{{5, “Hi”}, {80, “Bye”}}; 
+m[106] = “C++”;
 m.count(106);
-m.at(99) = “Hey”; // throws error
+m.at(99) = “Hey”; // throws error if key is not in map
 m[99] = “Hey”; // creates new entry
+m.insert({k,v});
+
 
 set<int> s{1, 0, 6}; // really a map to 0/1, without .at() and []
+s.insert(k);
+s.erase(k);
 
 // unordered_map, unordered_set based on hash function, hashed, fast for single elems
 // std::unordered_map<T1, T2>

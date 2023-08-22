@@ -469,6 +469,7 @@ ForwardIt remove(ForwardIt first, ForwardIt last, const T& value) {
 
     
 // c++20 concept lifting
+// Concept (C++20) = turns the implicit assumptions that your code is making, into explicit requirements
 
 // SFINAE
 // Substitution Failure Is Not An Error
@@ -606,16 +607,20 @@ auto isDep = [dep](const auto& course) {
    return course.name.size() >= dep.size &&
           course.substr(0, dep.size()) == dep;
 };
-std::copy_if(csCourses.begin(), csCourses.end(), back_inserter(csCourses), isDep);
 
+Special iterators: - back_inserter
+- e.g., std::copy(vec.begin(), vec.end(), std::back_inserter(newVec));
+- stream_iterator
+- e.g., std::copy(vec.begin(), vec.end(),
+std::ostream_iterator<int>(cout, “, ”));
+
+std::copy_if(csCourses.begin(), csCourses.end(), back_inserter(csCourses), isDep);
 // Stream iterators read from istreams or write to ostreams!
 std::copy_if(csCourses.begin(), csCourses.end(), std::ostream_iterator<Course>(cout, ”\n"), isDep);
 
 // std::remove does not change the size of the container!
 // The algorithm is not a member of std::vector (or any other collection) so it can’t change its size member.
-v.erase(
-    std::remove_if(v.begin(), v.end(), pred),
-    v.end()
-);
+v.erase(std::remove_if(v.begin(), v.end(), pred),v.end());
+
 
 

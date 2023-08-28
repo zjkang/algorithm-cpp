@@ -236,6 +236,13 @@ struct Object objName{value1, value2};
 value
 objName.var1 = newvalue1;
 
+
+struct Student {
+string name; // these are called fields string state; // separate these by semicolons int age;
+};
+Student s = {"Sarah", "CA", 21};
+
+
 struct SimpleGraph { 
     vector<Node> nodes; 
     vector<Edge> edges; 

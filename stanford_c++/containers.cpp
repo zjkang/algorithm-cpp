@@ -172,6 +172,11 @@ while(i != end) {
     ++i;
 }
 
+std::map<int, int> map{{1, 6}, {2, 8}, {0, 3}, {3,9}};
+for(auto iter = map.begin(); iter != map.end(); iter++) {
+     const auto& [key, value] = *iter;    // structured binding!
+}
+
 // set iterator
 std::set<int>::iterator iter = mySet.begin();
 int val = *iter;
@@ -348,6 +353,20 @@ int val2 = *itr;
 // use cases:
 // - std::vector, std::deque, std::string
 // - Pointers
+
+
+// Vectors and deques have the most powerful iterators!
+// Creating your own containers means creating their iterators as well
+    
+Container       |  Type of Iterator
+vector          |  random access
+deque           |  random access
+list            |  bidirectional
+map             |  bidirectional
+set             |  bidirectional
+stack           |  no iterator
+queue           |  no iterator
+priority_queue  |  no iterator
 
 
 // ----------------------------------------------------------------

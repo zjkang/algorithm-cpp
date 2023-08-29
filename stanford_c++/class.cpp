@@ -16,4 +16,11 @@ struct MyPair {
 };
 
 Templates don’t emit code until instantiated, so include the .cpp in the .h instead of the other way around!
+template<class First, typename Second>
+First MyPair<First, Second>::getFirst(){
+  return first; 
+}
+
+// using type_name = type
+
 

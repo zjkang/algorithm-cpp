@@ -14,6 +14,9 @@ events.pop_back();
 events.size();
 events.empty();
 
+vector<int> points;
+sort(points.begin(0, points.end(), greater<int>()); // sort by desc order
+
 
 // push_back vs emplace_back
 // https://en.cppreference.com/w/cpp/container/vector/emplace_back

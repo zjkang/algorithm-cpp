@@ -1,6 +1,5 @@
 // int to long long
 int a; -> (long long) a;
-
 // null pointer
 int* a = NULL; // or prefer to use 
 int* b = nullptr;
@@ -10,7 +9,6 @@ int* b = nullptr;
 typedef long long LL;
 typedef pair<LL, LL> PLL;
 LL a = 0;
-
 // modern c++ 
 using LL = long long;
 
@@ -27,3 +25,9 @@ static bool cmp(vector<int>&a, vector<int>&b) {
 
 // pair<> type
 pair<int, int> pair = make_pair(1, 2);
+pair<int, int> pair = {1,2};
+
+
+// modern c++
+
+

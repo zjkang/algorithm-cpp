@@ -1,11 +1,18 @@
 // https://en.cppreference.com/w/cpp/container/priority_queue
 
 // defalt to max priority heap
-// template<
-//     class T,
-//     class Container = std::vector<T>,
-//     class Compare = std::less<typename Container::value_type>
-// > class priority_queue;
+template<
+    class T,
+    class Container = std::vector<T>,
+    class Compare = std::less<typename Container::value_type>
+> class priority_queue;
+
+A priority queue is a container adaptor that provides constant time lookup of the largest (by default) element, 
+at the expense of logarithmic insertion and extraction.
+
+A user-provided Compare can be supplied to change the ordering, e.g. using std::greater<T> would cause the smallest element 
+to appear as the top().
+
 vector<int> data = {1, 8, 5, 6, 3, 4, 0, 9, 7, 2};
 print("data", data);
 std::priority_queue<int> q1; // Max priority queue
@@ -39,6 +46,9 @@ std::priority_queue<int, std::vector<int>, decltype(cmp)> q5(cmp); // Max priori
 for (int n : data) {
     q5.push(n);
 }
+// It also works after removing cmp in the constructor
+auto cmp = [](int left, int right) { return (left ^ 1) < (right ^ 1); };
+std::priority_queue<int, std::vector<int>, decltype(cmp)> q5;
 
 // APIs
 pq.top(); 

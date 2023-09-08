@@ -1,5 +1,59 @@
 // hash set
 // https://en.cppreference.com/w/cpp/container/unordered_set
+template<
+    class Key,
+    class Hash = std::hash<Key>,
+    class KeyEqual = std::equal_to<Key>,
+    class Allocator = std::allocator<Key>
+>
+class unordered_set;
+
+#include <iostream>
+#include <unordered_set>
+ 
+void print(const auto& set)
+{
+    for (const auto& elem : set)
+        std::cout << elem << ' ';
+    std::cout << '\n';
+}
+
+unordered_set<int> s;
+s.size(); s.empty();
+s.count(1);
+s.insert(1);
+s.erase(1);
+
+ 
+#include <iostream>
+#include <unordered_set>
+ 
+void print(const auto& set)
+{
+    for (const auto& elem : set)
+        std::cout << elem << ' ';
+    std::cout << '\n';
+}
+ 
+int main()
+{
+    std::unordered_set<int> mySet{2, 7, 1, 8, 2, 8}; // creates a set of ints
+    print(mySet);
+ 
+    mySet.insert(5); // puts an element 5 in the set
+    print(mySet);
+ 
+    if (auto iter = mySet.find(5); iter != mySet.end())
+        mySet.erase(iter); // removes an element pointed to by iter
+    print(mySet);
+ 
+    mySet.erase(7); // removes an element 7
+    print(mySet);
+}
+
+
+// Custom Hash Functions for C++ Unordered Containers
+
 
 
 std::ostream& operator<< (std::ostream& os, std::unordered_set<int> const& s) {

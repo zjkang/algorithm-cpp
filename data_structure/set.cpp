@@ -29,7 +29,11 @@ s.lower_bound(1); s.upper_bound(1);
 
 
 // https://usaco.guide/silver/custom-cpp-stl?lang=cpp
-C++ Sets with Custom Comparators
+// C++ Sets with Custom Comparators
+
+set<int, greater<int>> a;
+map<int, string, greater<int>> b;
+priority_queue<int, vector<int>, greater<int>> c;
 
 // Operator Overloading
 #include <bits/stdc++.h>
@@ -140,4 +144,7 @@ int main() {
 1 3 7
 2 4 3
 */
+
+
+
 

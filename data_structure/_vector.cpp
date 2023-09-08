@@ -1,4 +1,4 @@
-- https://cplusplus.com/reference/vector/vector/
+-https://cplusplus.com/reference/vector/vector/
 
 vector<vector<int>> events;
 

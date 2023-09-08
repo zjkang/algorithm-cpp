@@ -154,5 +154,42 @@ auto foo = [=] { return a + b + c; }
 // capture all by value except a by reference
 auto foo = [=, &a] { a += b + c; }
 
+ex.5 recursion func
+// before
+int dfs(int cur, const vector<int>& nums, vector<int>& seen) {
+    dfs(cur+1, nums, seen);
+}
+int solve(const vector<int>& nums) {
+    vector<int> seen = ...;
+    return dfs(0, nums, seen);
+}
+// after
+int solve(const vector<int>& nums) {
+    vector<int> seen = ...;
+    function<int(int)> dfs = [&](int cur) { // capture seen, nums, and dfs by reference
+        dfs(cur+1);
+    };
+    return dfs(0);
+}
+
+
+// string_view
+std::string_view = const char* + length;
+pros: lightweight, no copies, STL supports
+cons: immutable, life cycle issues, no concatenation (Rope needed), need to convert back and forth with std::string
+// before
+string s(100, 'a');
+string ss = s.substr(10, 20); // O(n) copy
+string_view v(s); // no copy, viewing into s
+string_view vv = v.substr(10,20); // O(1) no copy
+
+
+
+
+
+
+
+
+
 
 

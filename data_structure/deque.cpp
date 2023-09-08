@@ -1,11 +1,31 @@
-// https://cplusplus.com/reference/deque/deque/
+// https://en.cppreference.com/w/cpp/container/deque
+template<
+    class T,
+    class Allocator = std::allocator<T>
+> class deque;
 
 deque<int>q;
 q.front();
 q.back();
-
 q.push_front();
 q.push_back();
-
 q.pop_front();
 q.pop_back();
+
+#include <deque>
+#include <iostream>
+ 
+int main()
+{
+    // Create a deque containing integers
+    std::deque<int> d = {7, 5, 16, 8};
+ 
+    // Add an integer to the beginning and end of the deque
+    d.push_front(13);
+    d.push_back(25);
+ 
+    // Iterate and print values of deque
+    for (int n : d)
+        std::cout << n << ' ';
+    std::cout << '\n';
+}

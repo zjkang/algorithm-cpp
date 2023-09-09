@@ -166,11 +166,33 @@ int solve(const vector<int>& nums) {
 // after
 int solve(const vector<int>& nums) {
     vector<int> seen = ...;
-    function<int(int)> dfs = [&](int cur) { // capture seen, nums, and dfs by reference
+    function<int(int)> dfs = [&](int cur) { // capture seen, nums, and dfs by reference; cannot use auto as nested recursion
         dfs(cur+1);
     };
     return dfs(0);
 }
+
+// https://leetcode.com/problems/combination-sum-iv/description/?envType=daily-question&envId=2023-09-09
+class Solution {
+public:
+  int combinationSum4(vector<int>& nums, int target) {
+    vector<int> dp(target+1, -1);
+    function<int(int)> dfs = [&](int target) {
+      if (target == 0) return 1;
+      if (target < 0) return 0;
+      if (dp[target] != -1) {
+          return dp[target];
+      }
+      int res = 0;
+      for (int i = 0; i < nums.size(); i++) {
+          res += dfs(target - nums[i]);
+      }
+      dp[target] = res;
+      return res;
+    };
+    return dfs(target);
+  }
+};
 
 
 // string_view

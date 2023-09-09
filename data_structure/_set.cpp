@@ -53,7 +53,21 @@ int main()
 
 
 // Custom Hash Functions for C++ Unordered Containers
+// https://ianyepan.github.io/posts/cpp-custom-hash/
 
+// p is a pair<string, int>
+hash<string>{}(p.first) ^ hash<int>{}(p.second); // simple and effective
+
+class Example {
+ public:
+  void func() {
+    auto pairHash = []<typename T1, typename T2>(const pair<T1, T2> &p) {
+      return hash<T1>{}(p.first) ^ hash<T2>{}(p.second);
+    };
+    unordered_set<pair<int, int>, decltype(pairHash)> seen(10, pairHash);
+    unordered_map<pair<double, string>, int , decltype(pairHash)> umap(10, pairHash);
+  }
+};
 
 
 std::ostream& operator<< (std::ostream& os, std::unordered_set<int> const& s) {

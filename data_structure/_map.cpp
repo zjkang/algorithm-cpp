@@ -36,7 +36,7 @@ template<
 
 
 map<int, int> map;
-map.empty(); map.sise();
+map.empty(); map.size();
 map.count(); 
 auto lower_iter = map.lower_bound(1);
 

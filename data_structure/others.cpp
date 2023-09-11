@@ -11,6 +11,7 @@ typedef pair<LL, LL> PLL;
 LL a = 0;
 // modern c++ 
 using LL = long long;
+using PLL = pair<LL, LL>;
 
 
 // apply lambda function (https://en.cppreference.com/w/cpp/language/lambda)
@@ -28,12 +29,12 @@ pair<int, int> pair = make_pair(1, 2);
 pair<int, int> pair = {1,2};
 
 
-// modern c++
+// modern c++ from huahua youtube
 // initializer list (c++ 11)
 // ex 1
 vector<int> v{1,2,3,5}; // <==> initializer_list<int> l = {1,2,3,5}; vector<int> v(l);
 vector<int> v = {1,2,3,5}; // assignment
-vector<int> v{1,2,3,5}; // construction
+vector<int> v{1,2,3,5}; // constructor
 // ex 2
 vector<pair<int, float>> v{{1,2.5f}, {3,3.14f}};
 // ex 3
@@ -93,7 +94,7 @@ const auto [it, success] = s.insert(x);
 // ex3
 vector<pair<string, int>> v1{{"a", 1}, {"b", 2}};
 auto [k,v] = v1[0]; // ok
-vector<array<int, 3>> v2{{1,2,3}};
+vector<array<int, 3>> v2{{1,2,3}}; // array is fixed length.
 auto [a,b,c] = v2[0]; // ok
 vector<vector<int>> v3{{1,2,3}};
 auto [a,b,c] = v3[0]; // doesn't compile
@@ -101,8 +102,8 @@ auto [a,b,c] = v3[0]; // doesn't compile
 
 // range based for loop (c++11)
 set<int> s{1,2,3,4,5};
-for (int x : s) foo(x)
-
+for (int x : s) foo(x);
+// map for range loop
 map<string, int> m;
 for (auto&& kv : m) {
     cout << kv.first << " " << kv.second << endl;
@@ -148,7 +149,7 @@ ASSERT(a == 1);
 int a = 1;
 auto foo = [&a] { a += 1; };
 foo();
-ASSERT(a == 1);
+ASSERT(a == 2);
 // capture all variables by value / copy
 auto foo = [=] { return a + b + c; }
 // capture all by value except a by reference
@@ -166,6 +167,7 @@ int solve(const vector<int>& nums) {
 // after
 int solve(const vector<int>& nums) {
     vector<int> seen = ...;
+    // must specify the function type (function<int(int)>) as using recursive function to call itself
     function<int(int)> dfs = [&](int cur) { // capture seen, nums, and dfs by reference
         dfs(cur+1);
     };
@@ -175,8 +177,9 @@ int solve(const vector<int>& nums) {
 
 // string_view
 std::string_view = const char* + length;
-pros: lightweight, no copies, STL supports
-cons: immutable, life cycle issues, no concatenation (Rope needed), need to convert back and forth with std::string
+// pros: lightweight, no copies, STL supports
+// cons: immutable, life cycle issues, no concatenation (Rope needed), 
+// need to convert back and forth with std::string
 // before
 string s(100, 'a');
 string ss = s.substr(10, 20); // O(n) copy

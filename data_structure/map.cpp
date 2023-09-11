@@ -2,6 +2,14 @@
 
 // https://cplusplus.com/reference/unordered_map/unordered_map/
 // https://en.cppreference.com/w/cpp/container/unordered_map
+template<
+    class Key,
+    class T,
+    class Hash = std::hash<Key>,
+    class KeyEqual = std::equal_to<Key>,
+    class Allocator = std::allocator<std::pair<const Key, T>>
+>
+class unordered_map;
 
 // default value to empty vector<stinrg>
 unordered_map<string,vector<string>> map1; 
@@ -10,6 +18,7 @@ unordered_map<string, int> map2;
 
 // key -> a.first, value -> a.second
 for (auto a : map1) { 
+  // a = pair<string, vector<string>> {key, value}
   results.push_back(a.second);
 }
 // strucutre binding
@@ -34,7 +43,6 @@ template<
     class Allocator = std::allocator<std::pair<const Key, T>>
 > class map;
 
-
 map<int, int> map;
 map.empty(); map.sise();
 map.count(); 
@@ -45,7 +53,6 @@ auto lower_iter = map.lower_bound(1);
 // 1. Using default order
 // 2. Using a comparison object
 // 3. Specializing std::less function
-
 
 
 // ---------------------------------------------

@@ -1,21 +1,26 @@
--https://cplusplus.com/reference/vector/vector/
+https://cplusplus.com/reference/vector/vector/
 
 vector<vector<int>> events;
 
+// differentiate type & object
+// cmp is function object (function pointer) 
+// decltype(cmp) is type or bool(*)(vector<int>&, vector<int>&b) is type
 static bool cmp(vector<int>&a, vector<int>&b) {
     return a[1] < b[1];
 }
 sort(events.begin(), events.end(), cmp);
-sort(events.begin(), events.end(), [](auto &a, auto& b) { return a[1] < b[1]; }); // sorting by index 1
+// sorting by index 1
+sort(events.begin(), events.end(), [](auto &a, auto& b) { return a[1] < b[1]; }); 
+
+vector<int> points;
+// greater<int> is type, greater<int>() is a operator function
+sort(points.begin(0, points.end(), greater<int>()); // sort by desc order
 
 events.insert(events.begin(), events[0]); // insert
 events.push_back(); 
 events.pop_back();
 events.size();
 events.empty();
-
-vector<int> points;
-sort(points.begin(0, points.end(), greater<int>()); // sort by desc order
 
 #include <iostream>
 #include <vector>
@@ -42,7 +47,7 @@ int main()
 // https://en.cppreference.com/w/cpp/container/vector/emplace_back
 // no need to create a temporary copy constructor as in push_back
 // Person(string name, int age);
-person = Person("abc", 10);
+Person person = Person("abc", 10);
 events.push_back(Person("abc", 10));
 // < == >
 events.emplace_back("abc", 10);

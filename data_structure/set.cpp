@@ -22,7 +22,10 @@ unordered_set<int> s;
 s.size(); s.empty();
 s.count(1);
 s.insert(1);
-s.erase(1);
+
+s.erase(1); // size_type erase( const Key& key );
+s.erase(iterator); // iterator erase( iterator pos );
+
 
  
 #include <iostream>
@@ -145,7 +148,8 @@ int main() {
 auto cmp = [](const Edge &x, const Edge &y) { return x.w < y.w; };
 int main() {
 	int M = 4;
-	set<Edge, bool (*)(const Edge &, const Edge &)> v(cmp); // set<Edge,decltype(cmp)> v(cmp);
+	// set<Edge,decltype(cmp)> v(cmp);
+	set<Edge, bool (*)(const Edge &, const Edge &)> v(cmp); 
 	for (int i = 0; i < M; ++i) {
 		int a, b, w;
 		cin >> a >> b >> w;

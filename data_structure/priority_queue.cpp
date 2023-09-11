@@ -22,24 +22,29 @@ for (int n : data) {
 
 
 // Min priority queue
+// Built-in comparison greater<T> or less<T>
 // 1. std::greater<int> makes the max priority queue act as a min priority queue
 std::priority_queue<int, std::vector<int>, std::greater<int>> minq1(data.begin(), data.end());
 
 // 2. define a min priority queue
 std::priority_queue minq2(data.begin(), data.end(), std::greater<int>());
 
+// Functors
 // 3. Using a custom function object to compare elements.
 struct {
     bool operator()(const int l, const int r) const { return l > r; }
 } customLess;
+// customLess is struct object
 std::priority_queue minq3(data.begin(), data.end(), customLess); 
 
 // 4. Using a custom function object to compare elements.
 struct CustomLess {
     bool operator()(const int l, const int r) const { return l > r; }
 };
+// CustomLess is struct type
 std::priority_queue<int, vector<int>, CustomLess> minq4(data.begin(), data.end());
 
+// Lambda
 // 5. Using lambda to compare elements.
 auto cmp = [](int left, int right) { return left < right; };
 std::priority_queue<int, std::vector<int>, decltype(cmp)> q5(cmp); // Max priority queue

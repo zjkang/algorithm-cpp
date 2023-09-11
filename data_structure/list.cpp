@@ -9,6 +9,7 @@ l.push_back(1); l.push_front(1);
 l.pop_back(); l.pop_front();
 l.empty(); l.size();
 l.front(); l.back();
+l.insert();
 
 #include <algorithm>
 #include <iostream>

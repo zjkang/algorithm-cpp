@@ -1,3 +1,5 @@
+const int MOD = 1e9 + 7;
+
 // int to long long
 int a; -> (long long) a;
 // null pointer

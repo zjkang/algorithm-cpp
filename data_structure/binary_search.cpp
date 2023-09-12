@@ -2,7 +2,7 @@
 // https://en.cppreference.com/w/cpp/algorithm/lower_bound
 // https://en.cppreference.com/w/cpp/algorithm/upper_bound
 
-*** Note that lower_bound & upper_bound has different comp implemented
+//*** Note that lower_bound & upper_bound has different comp implemented
 
 
 template< class ForwardIt, class T, class Compare >
@@ -44,14 +44,14 @@ int main()
  
     std::vector<PriceInfo> prices{{100.0}, {101.5}, {102.5}, {102.5}, {107.3}};
  
-    for (double to_find : {102.5, 110.2})
-    {
+    for (double to_find : {102.5, 110.2}) {
+
         auto prc_info = std::lower_bound(prices.begin(), prices.end(), to_find,
             [](const PriceInfo& info, double value)
             {
                 return info.price < value;
             });
- 
+
         prc_info != prices.end()
             ? std::cout << prc_info->price << " at index " << prc_info - prices.begin()
             : std::cout << to_find << " not found";

@@ -7,10 +7,12 @@
 // enqueued角度: 白色 not enqueued, 灰色或者黑色 enqueued    -> BFS
 // dequeued角度: 白‌色灰‌色 not dequeued, 黑‌色 dequeued        -> priority queue/heap
 
+
 // Q1.1 BFS Template w/o Level Traversal
 // 无需分层遍历的宽度优先
 queue<int> queue;
 unordered_set<int> seen;
+Node* start = new Node();
 queue.push(start);
 seen.insert(start);
 while (!queue.empty()) {
@@ -42,4 +44,7 @@ while len(queue):
             if neighbor not in seen:
                 seen.add(neighbor)
                 queue.append(neighbor)
+
+// https://leetcode.com/problems/minimum-depth-of-binary-tree/
+
 

@@ -28,23 +28,30 @@ while (!queue.empty()) {
 
 
 // Q1.2 BFS Template w/ Level Traversal
-# 需要分层遍历的宽度
-from collections import deque
-
-queue = deque()
-seen = set()
-
-seen.add(start)
-queue.append(start)
-while len(queue):
-    size = len(queue)
-    for _ in range(size):
-        head = queue.popleft()
-        for neighbor in head.neighbors:
-            if neighbor not in seen:
-                seen.add(neighbor)
-                queue.append(neighbor)
+// 需要分层遍历的宽度
+queue<int> queue;
+unordered_set<int> seen;
+Node* start = new Node();
+queue.push(start);
+seen.insert(start);
+while (!queue.empty()) {
+  int size = queue.size();
+  for (int i = 0; i < size; ++i) {
+    Node* head = queue.front(); 
+    queue.pop();  
+    for (auto neighbor : head->neighbors) {
+      if (!seen.count(neighbor)) {
+        seen.insert(neighbor);
+        queue.push(neighbor);
+      }
+    }
+  }
+}
 
 // https://leetcode.com/problems/minimum-depth-of-binary-tree/
+// https://leetcode.com/problems/is-graph-bipartite/
+// https://www.lintcode.com/problem/clone-graph/description
+// https://leetcode.com/problems/open-the-lock/
+// https://leetcode.com/problems/the-maze/
 
 

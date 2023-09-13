@@ -101,8 +101,7 @@ public:
     }
 };
 
-
-// https://www.lintcode.com/problem/alien-dictionary/description
+// https://leetcode.com/problems/alien-dictionary/
 
 
 

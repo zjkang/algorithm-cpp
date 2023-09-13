@@ -102,6 +102,6 @@ void doubleBFS(Node* start, Node* end) {
 
 // https://leetcode.com/problems/minimum-depth-of-binary-tree/
 // https://leetcode.com/problems/is-graph-bipartite/
-// https://www.lintcode.com/problem/clone-graph/description
+// https://leetcode.com/problems/clone-graph/
 // https://leetcode.com/problems/open-the-lock/
 // https://leetcode.com/problems/the-maze/

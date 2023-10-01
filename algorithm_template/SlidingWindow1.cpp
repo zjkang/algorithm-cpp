@@ -41,19 +41,22 @@ void slidingWindow(string s, string t)
 
 // 一个更紧凑更好理解的模板
 // https://leetcode.com/problems/frequency-of-the-most-frequent-element/discuss/1175088/C++-Maximum-Sliding-Window-Cheatsheet-Template
-// slow, fast = 0
-// ans = 0
-// while fast < M:
-//   # CODE: use A[fast] to update state which might make the window invalid
-//   while invalid(slow...fast): # when invalid, keep shrinking the left edge until it's valid again
-//     # CODE: update state using A[slow]
-//     slow += 1
-//   ans = max(ans, fast - slow + 1) # the window [slow, fast] is the maximum window we've found thus far
-//   fast += 1
-// return ans
+int slow = 0, fast = 0;
+int ans = 0;
+while (slow < fast) {
+    // ... 1. CODE: use A[fast] to update state which might make the window invalid
+    while (invalid(slow ... fast)) { // when invalid, keep shrinking the left edge until it's valid again
+        // CODE: update state using A[slow]
+        slow++;
+    }
+    ans = max(ans, fast - slow + 1); // the window [slow, fast] is the maximum window we've found thus far
+    fast++;
+}
+return ans;
 
 
 
+// ---------------------------------------------------------------------------
 // Q1 Max Consecutive Ones III
 // https://leetcode.com/problems/max-consecutive-ones-iii/
 // 对于每一个终点，计算以它为终点的1s最长有多长with k flips
@@ -70,6 +73,22 @@ void slidingWindow(string s, string t)
 // https://leetcode.com/list/?selectedList=5qymxb97
 
 
+
+// ---------------------------------------------------------------------------
+// Sliding window with other data strucuture
+// Q1 Sliding Window Maximum
+// https://leetcode.com/problems/sliding-window-maximum/
+// Mono stack in desc
+
+
+// Q2 Sliding Window Median
+// https://leetcode.com/problems/sliding-window-median/
+// Set or Map (Multi-Set)
+
+
+// Q3 Max Water Trapped
+// https://leetcode.com/problems/trapping-rain-water/
+// // Two pointers with maintaining max left and right value
 
 
 

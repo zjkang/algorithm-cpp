@@ -1,5 +1,5 @@
 
-// template
+// Union Find template
 vector<int>Father;
 int N = s.size();
 Father.resize(N);
@@ -23,8 +23,8 @@ void Union(int x, int y) {
 
 
 // MST
-// 1584. Min Cost to Connect All Points
 // https://leetcode.com/problems/min-cost-to-connect-all-points/
+// 1584. Min Cost to Connect All Points
 class Solution {
 public:
     // MST
@@ -84,7 +84,11 @@ public:
 };
 
 
+// Union Find problems
 // https://leetcode.com/problems/number-of-islands-ii/
+// 305. Number of Islands II
 // calculate individual islands and use union-find to merge connected components
-//
+
+
+
 

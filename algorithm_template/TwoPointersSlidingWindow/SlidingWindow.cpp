@@ -55,41 +55,5 @@ while (slow < fast) {
 return ans;
 
 
-
-// ---------------------------------------------------------------------------
-// Q1 Max Consecutive Ones III
-// https://leetcode.com/problems/max-consecutive-ones-iii/
-// 对于每一个终点，计算以它为终点的1s最长有多长with k flips
-
-
-// Q2 Longest Substring Without Repeating Characters
-// https://leetcode.com/problems/longest-substring-without-repeating-characters/
-
-
-// Q3 Minimum Window Substring
-// https://leetcode.com/problems/minimum-window-substring/
-
 // Other Sliding Windows
 // https://leetcode.com/list/?selectedList=5qymxb97
-
-
-
-// ---------------------------------------------------------------------------
-// Sliding window with other data strucuture
-// Q1 Sliding Window Maximum
-// https://leetcode.com/problems/sliding-window-maximum/
-// Mono stack in desc
-
-
-// Q2 Sliding Window Median
-// https://leetcode.com/problems/sliding-window-median/
-// Set or Map (Multi-Set)
-
-
-// Q3 Max Water Trapped
-// https://leetcode.com/problems/trapping-rain-water/
-// // Two pointers with maintaining max left and right value
-
-
-
-

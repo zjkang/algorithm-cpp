@@ -2,6 +2,7 @@
 
 // https://leetcode.com/problems/implement-trie-ii-prefix-tree/
 // 1804. Implement Trie II (Prefix Tree)
+
 // A trie (pronounced as "try") or prefix tree is a tree data structure used to efficiently store 
 // and retrieve keys in a dataset of strings. There are various applications of this data structure, 
 // such as autocomplete and spellchecker.
@@ -75,17 +76,6 @@ public:
 };
 
 
-
-// ---------------------------------------------------------------------
-// Trie problems
-// https://leetcode.com/problems/word-search-ii/
-// 212. Word Search II
-// Search words from matrix given words dictionary (2 simga interview)
-
-
-// https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
-// 421. Maximum XOR of Two Numbers in an Array
-// Search max xor in an array + trie
 
 
 // https://leetcode.com/problems/maximum-xor-with-an-element-from-array/

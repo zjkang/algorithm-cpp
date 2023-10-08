@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/open-the-lock/
 // 752. Open the Lock
 
-
+// BFS on lock
 class Solution {
 public:
     int openLock(vector<string>& deadends, string target) {
@@ -18,11 +18,8 @@ public:
             for (int i = 0; i < size; i++) {
                 auto cur = queue.front(); queue.pop();
                 if (cur == target) return depth;
-
                 for (int ii = 0; ii < 4; ii++) {
-                    vector<int> nextDigit = {
-                        (cur[ii] - '0' - 1 + 10) % 10, 
-                        (cur[ii] - '0' + 1) % 10};
+                    vector<int> nextDigit = {(cur[ii] - '0' - 1 + 10) % 10, (cur[ii] - '0' + 1) % 10};
                     for (auto x : nextDigit) {
                         auto next = cur;
                         next[ii] = x + '0';

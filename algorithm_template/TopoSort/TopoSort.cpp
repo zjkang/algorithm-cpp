@@ -60,5 +60,3 @@ map<int, int> getIndegree(DirectedGraphNode& graph) {
   return nodeToIndegree;
 }
 
-
-  

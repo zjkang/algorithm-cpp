@@ -3,7 +3,7 @@ const int MOD = 1e9 + 7;
 // int to long long
 int a; -> (long long) a;
 // null pointer
-int* a = NULL; // or prefer to use 
+int* a = NULL; // or prefer to use
 int* b = nullptr;
 
 
@@ -11,7 +11,7 @@ int* b = nullptr;
 typedef long long LL;
 typedef pair<LL, LL> PLL;
 LL a = 0;
-// modern c++ 
+// modern c++
 using LL = long long;
 using PLL = pair<LL, LL>;
 
@@ -55,7 +55,6 @@ vector<int> foo() {
     <==>
     return {begin(ans), end(ans)};
 }
-
 
 // auto keyword (c++ 11)
 // ex3
@@ -211,7 +210,12 @@ string_view v(s); // no copy, viewing into s
 string_view vv = v.substr(10,20); // O(1) no copy
 
 
-
+// pair -> auto sort based on first and then sceond value
+// there is no need to override comp function for pair type!!!
+// The same applies to tuple as well!!!
+set<pair<int,int>> pairSet;
+set<tuple<int, string, int, int>> tupleSet;
+using TP = tuple<int, string, int, int>;
 
 
 

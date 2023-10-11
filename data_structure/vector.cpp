@@ -4,7 +4,7 @@ vector<int> v{1,3,2,4,5};
 sort(v.begin(), v.end()); // sort in ascending order
 sort(v.begin(), v.end(), greater<int>()); // sort in descending order
 sort(v.rbegin(), v.rend()); // sort in descending order as it considers the last element (rbegin()) in the vector as the first element in order,
-// and then order by ascending from the last to the first. 
+// and then order by ascending from the last to the first.
 
 vector<vector<int>> events;
 

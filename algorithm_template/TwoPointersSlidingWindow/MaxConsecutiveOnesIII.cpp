@@ -8,7 +8,7 @@ public:
         // sliding window
         int ret = 0;
         int slow = 0, fast = 0;
-        while (slow < nums.size()) {
+        while (fast < nums.size()) {
             if (nums[fast] == 0) {
                 k--;
             }

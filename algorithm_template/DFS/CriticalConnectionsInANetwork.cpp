@@ -1,5 +1,5 @@
-https://leetcode.com/problems/critical-connections-in-a-network/
-1192. Critical Connections in a Network
+// https://leetcode.com/problems/critical-connections-in-a-network/
+// 1192. Critical Connections in a Network
 
 // wisdompeak explanation
 // https://github.com/wisdompeak/LeetCode/tree/a929eb56fd1505951d3c7a5566c892015dbba68b/DFS/1192.Critical-Connections-in-a-Network

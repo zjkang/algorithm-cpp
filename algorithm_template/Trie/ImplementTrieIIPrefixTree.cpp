@@ -29,7 +29,7 @@ public:
     Trie() {
         root = new TrieNode();
     }
-    
+
     void insert(string word) {
         TrieNode* cur = root;
         for (auto c : word) {
@@ -42,7 +42,7 @@ public:
         cur->leaf = true;
         cur->wordCount++;
     }
-    
+
     int countWordsEqualTo(string word) {
         TrieNode* cur = root;
         for (auto c : word) {
@@ -53,7 +53,7 @@ public:
         }
         return cur->leaf ? cur->wordCount : 0;
     }
-    
+
     int countWordsStartingWith(string prefix) {
         TrieNode* cur = root;
         for (auto c : prefix) {
@@ -64,7 +64,7 @@ public:
         }
         return cur->count;
     }
-    
+
     void erase(string word) {
         TrieNode* cur = root;
         for (auto c : word) {
@@ -74,19 +74,3 @@ public:
         cur->wordCount--;
     }
 };
-
-
-
-
-// https://leetcode.com/problems/maximum-xor-with-an-element-from-array/
-// 1707. Maximum XOR With an Element From Array
-// Search max xor given max upper bound + trie
-
-
-// https://github.com/zjkang/ds_algorithm/blob/main/python/trie/leetcode_1803_count_pairs_with_xor_in_a_range.py
-// 1803. Count Pairs With XOR in a Range
-// low <= nums[i] ^ nums[j] <= high for xor + trie + upper_bound
-
-
-
-

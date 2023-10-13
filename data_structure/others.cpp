@@ -213,9 +213,15 @@ string_view vv = v.substr(10,20); // O(1) no copy
 // pair -> auto sort based on first and then sceond value
 // there is no need to override comp function for pair type!!!
 // The same applies to tuple as well!!!
+// https://en.cppreference.com/w/cpp/utility/tuple
 set<pair<int,int>> pairSet;
 set<tuple<int, string, int, int>> tupleSet;
 using TP = tuple<int, string, int, int>;
+// structure binding
+auto [a,b] = make_pair(1,2);
+auto [a,b,c] = make_tuple(1,2,3);
+
+
 
 
 

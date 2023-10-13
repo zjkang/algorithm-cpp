@@ -218,5 +218,16 @@ int main() {
 */
 
 
+// most convenient way: use
+// array<int,2> or pair<int,int> or tuple<int, string, int,...> in the set
+set<array<int,2>> set = {{1,2},{4,2}, {2,1}};
+for (auto x : set) {
+	cout << x[0] << "," << x[1] << endl;
+}
+
+tuple<int,string,int> a = {1,"abc", 2};
+auto [a1,b1,c1]  = a;
+std::tie(a1,b1,c2) = a;
+
 
 

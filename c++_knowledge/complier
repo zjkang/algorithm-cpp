@@ -1,0 +1,11 @@
+compiler
+>$ g++ -std=c++17 types.cpp -o prog
+execute
+>$ ./prog
+
+
+sizeof(x) // # of bytes
+int64_t x;
+
+
+

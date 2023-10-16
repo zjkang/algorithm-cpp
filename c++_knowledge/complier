@@ -9,3 +9,14 @@ int64_t x;
 
 
 
+//
+int x = 10;
+string s = to_string(x); //
+
+// algorithm
+std::fill(first, end, init_value);
+
+
+
+
+

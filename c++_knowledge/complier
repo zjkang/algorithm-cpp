@@ -1,11 +1,29 @@
+// c++ insights: see how c++ inteprete the code
+// cppinsights.io
+
+// debugger tool
+gdb
+valgrind
+
+
 compiler
 >$ g++ -std=c++17 types.cpp -o prog
+>$ g++ -g -fsanitize=address -std=c++17 -o prog
 execute
 >$ ./prog
 
 
 sizeof(x) // # of bytes
 int64_t x;
+// can only figure out the memeory size at compile time in the stack
+sizeof(x);
+int array[] = {1,3,5,7,9};
+sizeof(array); // 20
+int* x = new int[100];
+sizeof(x); // 8
+int x = 1;
+int* p = &x;
+sizeof(x); // 8
 
 
 
@@ -15,6 +33,93 @@ string s = to_string(x); //
 
 // algorithm
 std::fill(first, end, init_value);
+
+// forward declard
+float add(float a, float b);
+// < == >
+auto add(float a, float b) -> float;
+
+char a = 'a';
+std::cout << (void*)&a << std::endl; // explitcilty convert to pointer
+std::cout << (void*)&main << std::endl; // explitcilty convert to pointer
+
+int* p = nullptr;
+int& r = *p; // illegal, dereference of null pointer
+
+#include<typeinfo>
+typeid(x).name(); // check type of the variable
+
+is_const<decltyle(x)>::value; // check if the type of x is const
+is_const<const int>::value;
+
+
+// heap memory
+int* x = new int;
+delete x;
+int* x = new int[100];
+delete[] x;
+// stack memory
+int array[] = {1,3,5,7,9};
+
+// Note: pass array into a function, array decay to pointer
+
+// pointer pitfall
+// null pointer deference
+// memeory leak
+// dangling pointer
+// double free
+int add(int x, int y) {
+    return x + y;
+}
+// function pointer for functions: int name(int, int)
+int (*op)(int,int); // #1
+op = add; // can be used for callback
+typedef int (*PFnIntegerOperations)(int, int); // #2
+PFnIntegerOperations op;
+std::function<int(int,int)> op; // #3
+
+// lvalue & rvalue
+// move semantics: after move, the previous owner lost the control
+std::string a = "abcz";
+std::string b = std::move(a);
+std::cout << a << std::endl;
+std::cout << b << std::endl;
+
+
+// smart pointers
+#include <memory>
+std::unique_ptr; // RAII (scoped)
+// cannot share (no copies allowed)
+// do not have to delete
+std::unique_ptr<UDT> mike = std::unique_ptr<UDT>(new UDT);
+std::unique_ptr<UDT[]> mike_array = std::unique_ptr<UDT>(new UDT[10]);
+std::unique_ptr<UDT[]> mike_array = std::make_unique<UDT[]>(10);
+// but allowed to 'move' a unique pointer, not allow to copy with unique_ptr
+std::unique_ptr<UDT> joe = std::move(mike);
+
+// help us avoid calling new/delete
+std::shared_ptr<UDT> ptr1 = std::make_shared<UDT>();
+// reference count is thread-safe
+
+std::weak_ptr<UDT> ptr1 = std::make_weak<UDT>();
+
+
+
+// interface (.hpp) vs implementation (.cpp)
+// c++ 2 phases
+// compile
+// linker
+// Always include 'header files' never .cpp files
+#include "" // local path
+#include <> // system path
+
+
+
+
+
+
+
+
 
 
 

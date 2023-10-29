@@ -1,3 +1,4 @@
+// postorder traversal
 void postorder(TreeNode* root) {
     if (!root) return;
     postorder(root->left);
@@ -14,6 +15,7 @@ void postorder(TreeNode* root) {
 void postorder(TreeNode* root) {
     if (!root) return;
     stack<TreeNode*> stack;
+    pushChildren(root, stack);
     while (!stack.empty()) {
         auto cur = stack.top();
         stack.pop();

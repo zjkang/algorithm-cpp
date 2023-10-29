@@ -1,3 +1,5 @@
+// preorder traversal
+
 void preorder(TreeNode* root) {
     if (!root) return;
     visit(root); // visit the root
@@ -23,7 +25,7 @@ void preorder(TreeNode* root) {
             stack.push(cur->right);
         }
         if (cur->left) {
-            stack.push(cur->right);
+            stack.push(cur->left);
         }
     }
 }

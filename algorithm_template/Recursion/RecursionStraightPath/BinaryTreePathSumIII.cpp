@@ -3,7 +3,7 @@
 // Binary Tree Path Sum III
 
 // Description
-// Give a binary tree, and a target number, find all path that the sum of nodes equal to target, 
+// Give a binary tree, and a target number, find all path that the sum of nodes equal to target,
 // the path could be start and end at any node in the tree.
 
 // Example

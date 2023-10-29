@@ -1,4 +1,5 @@
 // https://app.laicode.io/app/problem/139
+
 // Maximum Path Sum Binary Tree II
 
 /**
@@ -14,7 +15,8 @@ class Solution {
 public:
     int max_val = INT_MIN;
     TreeNode* maxPathSum(TreeNode* root) {
-        return helper(root);
+        helper(root);
+        return max_val;
     }
 
     int helper(TreeNode* root) {

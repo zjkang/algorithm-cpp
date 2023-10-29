@@ -9,7 +9,7 @@ https://leetcode.com/problems/validate-binary-search-tree/
 // 区间法
 class Solution {
     bool isValidBST(TreeNode* root) {
-        return helper(root, MAX_INT, MIN_INT);
+        return helper(root, INT_MAX, INT_MIN);
     }
 
     bool helper(TreeNode* root, int maxVal, int minVal) {

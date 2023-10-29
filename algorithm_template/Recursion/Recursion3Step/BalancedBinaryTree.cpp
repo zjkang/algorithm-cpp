@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/balanced-binary-tree/
-// Q1 Binary Tree is Balanced Binary Tree
 
+// Q1 Binary Tree is Balanced Binary Tree
 // @return: return -1 or height of the tree
 
 /**

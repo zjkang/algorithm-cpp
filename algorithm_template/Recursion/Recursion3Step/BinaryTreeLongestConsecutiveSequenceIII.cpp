@@ -1,4 +1,5 @@
 // https://www.lintcode.com/problem/binary-tree-longest-consecutive-sequence-iii/
+
 // Q3 Binary Tree Longest Consecutive Sequence III
 
 /**
@@ -21,12 +22,12 @@ public:
         if (!root) return {0, 0};
         pair<int,int> cur = {1, 1};
         for (auto child : root->children) {
-            auto child_len = dfs(child);
+            auto childLen = dfs(child);
             if (root->val == child->val - 1) { // increase
-                cur[0] = max(cur[0], child_len[0] + 1);
+                cur[0] = max(cur[0], childLen[0] + 1);
             }
             if (root->val == child->val + 1) { // decrease
-                cur[1] = max(cur[1], child_len[1] + 1);
+                cur[1] = max(cur[1], childLen[1] + 1);
             }
         }
         max_val = max(max_val, cur[0] + cur[1] - 1);

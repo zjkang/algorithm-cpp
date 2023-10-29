@@ -1,3 +1,5 @@
+// inorder traversavl
+
 void inorder(TreeNode* root) {
     if (!root) return;
     inorder(root->left);

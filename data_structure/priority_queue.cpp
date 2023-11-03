@@ -5,6 +5,8 @@ https://github.com/wisdompeak/LeetCode/tree/master/Union_Find/1584.Min-Cost-to-C
 priority_queue的模板类尽量避免用vector
 避免使用vector（时空非常坑爹），改用定长数组array<int,N>这个数据结构
 
+priority_queue<array<int,3>, vector<array<int,3>>, greater<array<int,3>>>edges;
+
 
 // defalt to max priority heap
 template<

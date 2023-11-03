@@ -16,7 +16,12 @@ vector<int> packages;
 int val = 10;
 auto iterLower = lower_bound(packages.begin(), packages.end(), val); // the first iterator >= val
 auto iterUpper = upper_bound(packages.begin(), packages.end(), val)); // the first iterator > val
-int offsetLower = prev(iter) - packages.begin();
+int offsetLower = prev(iter) - packages.begin(); // random access
+
+// calculate the distance between two iterators
+// InputIt or RandomIt
+https://en.cppreference.com/w/cpp/iterator/distance
+
 
 
 // example 1

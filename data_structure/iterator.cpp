@@ -11,3 +11,8 @@ std::vector<int> bar;
 for (auto it = std::begin(foo); it!=std::end(foo); ++it) {
     bar.push_back(*it);
 }
+
+// distance
+
+// adv(iterator, step);
+

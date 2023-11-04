@@ -4,7 +4,7 @@ Note:
 https://github.com/wisdompeak/LeetCode/tree/master/Union_Find/1584.Min-Cost-to-Connect-All-Points
 priority_queue的模板类尽量避免用vector
 避免使用vector（时空非常坑爹），改用定长数组array<int,N>这个数据结构
-
+// e.g. use array<int,3> instead of vector<int>
 priority_queue<array<int,3>, vector<array<int,3>>, greater<array<int,3>>>edges;
 
 

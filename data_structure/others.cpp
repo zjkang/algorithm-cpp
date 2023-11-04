@@ -51,7 +51,7 @@ vector<int> v{5,1}; // v = {5,1};
 
 vector<int> foo() {
     set<int> ans = ...
-    return vector<Mint>(begin(ans), end(ans));
+    return vector<int>(begin(ans), end(ans));
     <==>
     return {begin(ans), end(ans)};
 }
@@ -81,6 +81,7 @@ auto it = s.find(x);
 
 
 // structured binding (c++ 17)
+// apply to fixed length data structure
 pair<int, float> p{1,3.14};
 const auto& [x,y] = p; // must be auto
 // ex1
@@ -168,7 +169,8 @@ int solve(const vector<int>& nums) {
 // after
 int solve(const vector<int>& nums) {
     vector<int> seen = ...;
-    // must specify the function type (function<int(int)>) as using recursive function to call itself
+    // NOTE!!!: must specify the function type (function<int(int)>) as using recursive function to call itself
+    // must use & to capture this dfs pointer
     function<int(int)> dfs = [&](int cur) { // capture seen, nums, and dfs by reference
         dfs(cur+1);
     };
@@ -212,14 +214,17 @@ string_view vv = v.substr(10,20); // O(1) no copy
 
 // pair -> auto sort based on first and then sceond value
 // there is no need to override comp function for pair type!!!
-// The same applies to tuple as well!!!
+// The same applies to tuple and array<int,T> as well!!!
 // https://en.cppreference.com/w/cpp/utility/tuple
 set<pair<int,int>> pairSet;
+// !!! tuple supports different types
 set<tuple<int, string, int, int>> tupleSet;
 using TP = tuple<int, string, int, int>;
 // structure binding
 auto [a,b] = make_pair(1,2);
 auto [a,b,c] = make_tuple(1,2,3);
+// array<int,T>
+set<array<int,2>> arraySet;
 
 
 

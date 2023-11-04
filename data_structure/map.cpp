@@ -15,6 +15,8 @@ class unordered_map;
 unordered_map<string,vector<string>> map1; 
 // default value to 0
 unordered_map<string, int> map2; 
+// default map
+unordered_map<string,int> map = {{"a", 1}, {"b", 2}};
 
 // key -> a.first, value -> a.second
 for (auto a : map1) { 

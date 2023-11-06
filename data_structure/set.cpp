@@ -106,6 +106,18 @@ set<int, greater<int>> a;
 map<int, string, greater<int>> b;
 priority_queue<int, vector<int>, greater<int>> c;
 
+#include <set>
+int main() {
+  std::set<int, std::greater<int>> s;
+  s.insert(1);
+  s.insert(2);
+  s.insert(3);
+
+  for (auto it = s.begin(); it != s.end(); ++it) {
+    std::cout << *it << std::endl;
+  }
+}
+
 // Operator Overloading
 #include <bits/stdc++.h>
 using namespace std;

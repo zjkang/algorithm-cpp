@@ -19,15 +19,15 @@ void print(const auto& set)
 }
 
 unordered_set<int> s;
-s.size(); s.empty();
+s.size();
+s.empty();
 s.count(1);
 s.insert(1);
-
+s.find(1) != s.end();
 s.erase(1); // size_type erase( const Key& key );
 s.erase(iterator); // iterator erase( iterator pos );
 
 
- 
 #include <iostream>
 #include <unordered_set>
  
@@ -61,6 +61,7 @@ int main()
 // p is a pair<string, int>
 hash<string>{}(p.first) ^ hash<int>{}(p.second); // simple and effective
 
+
 class Example {
  public:
   void func() {
@@ -71,16 +72,29 @@ class Example {
     unordered_map<pair<double, string>, int , decltype(pairHash)> umap(10, pairHash);
   }
 };
+// e.g.,
+auto pairHash = []<typename T1, typename T2>(const pair<T1, T2> &p) {
+  return hash<T1>{}(p.first) ^ hash<T2>{}(p.second);
+};
+unordered_set<pair<int, int>, decltype(pairHash)> seen(10, pairHash);
+unordered_map<pair<double, string>, int , decltype(pairHash)> umap(10, pairHash);
+
+seen.insert({1,2});
+cout << seen.count({1,2}) << endl;
+
+umap[{1.2, "abc"}] = 10;
+cout << umap[{1.2, "abc"}] << endl;
 
 
 std::ostream& operator<< (std::ostream& os, std::unordered_set<int> const& s) {
-  for (os << "[" << s.size() << "] { "; int i : s)
-    os << i << ' ';
+  os << "[" << s.size() << "] { "; 
+  for (int i : s) os << i << ' ';
   return os << "}\n";
 }
 
 std::unordered_set<int> nums = {2, 3, 4};
-auto p = nums.insert (1); // insert element
+cout << nums << endl;
+auto p = nums.insert(1); // insert element
 
 
 // -------------------------------------------------------------

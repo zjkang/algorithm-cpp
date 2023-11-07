@@ -179,6 +179,7 @@ auto cmp = [](const Edge &x, const Edge &y) { return x.w < y.w; };
 int main() {
   int M = 4;
   // set<Edge,decltype(cmp)> v(cmp);
+  // set<Edge,decltype(cmp)> v; // also works
   set<Edge, bool (*)(const Edge &, const Edge &)> v(cmp); 
   for (int i = 0; i < M; ++i) {
     int a, b, w;

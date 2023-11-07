@@ -93,18 +93,20 @@ template<
 > class set;
 
 set<int> s;
-s.empty(); s.size();
-s.count(1); s.find(1);
+s.empty();
+s.size();
+s.count(1); 
+s.find(1) != s.end();
 s.insert(1);
 s.lower_bound(1); s.upper_bound(1);
+it = s.erase(it); // after remove the value the iterator points to, returns the next iterator
 
 
 // https://usaco.guide/silver/custom-cpp-stl?lang=cpp
 // C++ Sets with Custom Comparators
-
-set<int, greater<int>> a;
-map<int, string, greater<int>> b;
-priority_queue<int, vector<int>, greater<int>> c;
+set<int, greater<int>> a; // decreasing order
+map<int, string, greater<int>> b; // decreasing order
+priority_queue<int, vector<int>, greater<int>> c; // min-heap
 
 #include <set>
 int main() {
@@ -117,6 +119,8 @@ int main() {
     std::cout << *it << std::endl;
   }
 }
+// print 3, 2, 1 
+
 
 // Operator Overloading
 #include <bits/stdc++.h>

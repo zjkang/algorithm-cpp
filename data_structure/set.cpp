@@ -247,4 +247,26 @@ auto [a1,b1,c1]  = a;
 std::tie(a1,b1,c2) = a;
 
 
+// How to erase elements while iterating
+set<int> set{1,2,3,4};
+// erase elements while iterating
+for (auto it = set.begin(); it != set.end();) {
+    if (*it % 2 == 0) {
+        it = set.erase(it); // it moves to the next iterator position
+        cout << "next it: " << *it << endl;
+    } else {
+        it++;
+    }
+}
+for (auto x : set) cout << x << endl;
+
+// Note: it will fail in some c++ compiliers
+for (auto it : set) {
+    if (it % 2 == 0) {
+        auto x = set.erase(it); // it moves to the next iterator position
+        cout << "next x: " << x << endl;
+    }
+}
+for (auto x : set) cout << x << endl;
+
 

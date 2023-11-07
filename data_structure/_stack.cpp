@@ -6,5 +6,6 @@ template<
 
 stack<int> s;
 s.top();
-s.push(1); s.pop();
+s.push(1); 
+s.pop();
 s.empty(); s.size();

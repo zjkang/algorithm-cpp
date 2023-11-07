@@ -122,12 +122,12 @@ int main() {
 // print 3, 2, 1 
 
 
-// Operator Overloading
+// 1. Operator Overloading
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
 	int a, b, w;
-	bool operator<(const Edge &y) const { return w < y.w; }
+	bool operator<(const Edge &y) const { return w < y.w; } // < overload
 };
 int main() {
 	int M = 4;
@@ -141,7 +141,7 @@ int main() {
 }
 
 
-// With a function
+// 2. With a function
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
@@ -160,7 +160,7 @@ int main() {
 }
 
 
-// lambda function
+// 3. lambda function
 auto cmp = [](const Edge &x, const Edge &y) { return x.w < y.w; };
 int main() {
 	int M = 4;
@@ -173,10 +173,11 @@ int main() {
 	}
 	for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
 }
-// even though decltype(cmp) is not actually equivalent to bool(*)(const Edge&,const Edge&). See Lambda Expressions for details.
+// even though decltype(cmp) is not actually equivalent to bool(*)(const Edge&,const Edge&). 
+// See Lambda Expressions for details.
 
 
-// Functors
+// 4. Functors
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
@@ -209,7 +210,7 @@ int main() {
 }
 
 
-// Built-In Functors
+// 5. Built-In Functors less<T> or greater<T>
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
@@ -218,7 +219,7 @@ struct Edge {
 };
 int main() {
 	int M = 4;
-	set<Edge, greater<Edge>> v;
+	set<Edge, greater<Edge>> v; // decreasing order
 	for (int i = 0; i < M; ++i) {
 		int a, b, w;
 		cin >> a >> b >> w;

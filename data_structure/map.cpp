@@ -46,15 +46,21 @@ template<
 > class map;
 
 map<int, int> map;
-map.empty(); map.size();
-map.count(); 
+map.empty(); 
+map.size();
+map.count();
+map.find(1) != map.end(); 
 auto lower_iter = map.lower_bound(1);
+
+// custom order
+map<int, string, greater<int>> b; // decreasing order
+
+
 
 // https://www.techiedelight.com/use-std-pair-key-std-map-cpp/
 // when pair is used as key
 // 1. Using default order
 // 2. Using a comparison object
 // 3. Specializing std::less function
-
 
 // ---------------------------------------------

@@ -33,6 +33,9 @@ if (map1.find("a")!=map1.end()) {
 }
 map1.count("a");
 
+// how to define custom hash function
+// https://github.com/zjkang/algorithm-cpp/blob/main/data_structure/set.cpp
+
 
 // ----------------------------------------------------------
 // map
@@ -55,6 +58,10 @@ auto lower_iter = map.lower_bound(1);
 // custom order
 map<int, string, greater<int>> b; // decreasing order
 
+// refer to 
+// 1. how to define custom order
+// 2. how to erase elements while iterating
+// https://github.com/zjkang/algorithm-cpp/blob/main/data_structure/set.cpp
 
 
 // https://www.techiedelight.com/use-std-pair-key-std-map-cpp/

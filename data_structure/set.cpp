@@ -126,18 +126,18 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
-	int a, b, w;
-	bool operator<(const Edge &y) const { return w < y.w; } // < overload
+  int a, b, w;
+  bool operator<(const Edge &y) const { return w < y.w; } // < overload
 };
 int main() {
-	int M = 4;
-	set<Edge> v;
-	for (int i = 0; i < M; ++i) {
-		int a, b, w;
-		cin >> a >> b >> w;
-		v.insert({a, b, w});
-	}
-	for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
+  int M = 4;
+  set<Edge> v;
+  for (int i = 0; i < M; ++i) {
+    int a, b, w;
+    cin >> a >> b >> w;
+    v.insert({a, b, w});
+  }
+  for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
 }
 
 
@@ -145,33 +145,33 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
-	int a, b, w;
+  int a, b, w;
 };
 bool cmp(const Edge &x, const Edge &y) { return x.w < y.w; }
 int main() {
-	int M = 4;
-	set<Edge, bool (*)(const Edge &, const Edge &)> v(cmp); // set<Edge,decltype(&cmp)> v(cmp);
-	for (int i = 0; i < M; ++i) {
-		int a, b, w;
-		cin >> a >> b >> w;
-		v.insert({a, b, w});
-	}
-	for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
+  int M = 4;
+  set<Edge, bool (*)(const Edge &, const Edge &)> v(cmp); // set<Edge,decltype(&cmp)> v(cmp);
+  for (int i = 0; i < M; ++i) {
+    int a, b, w;
+    cin >> a >> b >> w;
+    v.insert({a, b, w});
+  }
+  for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
 }
 
 
 // 3. lambda function
 auto cmp = [](const Edge &x, const Edge &y) { return x.w < y.w; };
 int main() {
-	int M = 4;
-	// set<Edge,decltype(cmp)> v(cmp);
-	set<Edge, bool (*)(const Edge &, const Edge &)> v(cmp); 
-	for (int i = 0; i < M; ++i) {
-		int a, b, w;
-		cin >> a >> b >> w;
-		v.insert({a, b, w});
-	}
-	for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
+  int M = 4;
+  // set<Edge,decltype(cmp)> v(cmp);
+  set<Edge, bool (*)(const Edge &, const Edge &)> v(cmp); 
+  for (int i = 0; i < M; ++i) {
+    int a, b, w;
+    cin >> a >> b >> w;
+    v.insert({a, b, w});
+  }
+  for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
 }
 // even though decltype(cmp) is not actually equivalent to bool(*)(const Edge&,const Edge&). 
 // See Lambda Expressions for details.
@@ -181,32 +181,32 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
-	int a, b, w;
+  int a, b, w;
 };
 struct cmp {
-	bool operator()(const Edge &x, const Edge &y) const { return x.w < y.w; }
+  bool operator()(const Edge &x, const Edge &y) const { return x.w < y.w; }
 };
 int main() {
-	int M = 4;
-	set<Edge, cmp> v;
-	for (int i = 0; i < M; ++i) {
-		int a, b, w;
-		cin >> a >> b >> w;
-		v.insert({a, b, w});
-	}
-	for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
+  int M = 4;
+  set<Edge, cmp> v;
+  for (int i = 0; i < M; ++i) {
+    int a, b, w;
+    cin >> a >> b >> w;
+    v.insert({a, b, w});
+  }
+  for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
 }
 // cmp like a normal function by adding () after it
 int main() {
-	int M = 4;
-	vector<Edge> v;
-	for (int i = 0; i < M; ++i) {
-		int a, b, w;
-		cin >> a >> b >> w;
-		v.push_back({a, b, w});
-	}
-	sort(begin(v), end(v), cmp());
-	for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
+  int M = 4;
+  vector<Edge> v;
+  for (int i = 0; i < M; ++i) {
+    int a, b, w;
+    cin >> a >> b >> w;
+    v.push_back({a, b, w});
+  }
+  sort(begin(v), end(v), cmp());
+  for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
 }
 
 
@@ -214,18 +214,18 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 struct Edge {
-	int a, b, w;
-	bool operator>(const Edge &y) const { return w > y.w; }
+  int a, b, w;
+  bool operator>(const Edge &y) const { return w > y.w; }
 };
 int main() {
-	int M = 4;
-	set<Edge, greater<Edge>> v; // decreasing order
-	for (int i = 0; i < M; ++i) {
-		int a, b, w;
-		cin >> a >> b >> w;
-		v.insert({a, b, w});
-	}
-	for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
+  int M = 4;
+  set<Edge, greater<Edge>> v; // decreasing order
+  for (int i = 0; i < M; ++i) {
+    int a, b, w;
+    cin >> a >> b >> w;
+    v.insert({a, b, w});
+  }
+  for (Edge e : v) cout << e.a << " " << e.b << " " << e.w << "\n";
 }
 /* Output:
 2 3 10
@@ -239,7 +239,7 @@ int main() {
 // array<int,2> or pair<int,int> or tuple<int, string, int,...> in the set
 set<array<int,2>> set = {{1,2},{4,2}, {2,1}};
 for (auto x : set) {
-	cout << x[0] << "," << x[1] << endl;
+  cout << x[0] << "," << x[1] << endl;
 }
 
 tuple<int,string,int> a = {1,"abc", 2};

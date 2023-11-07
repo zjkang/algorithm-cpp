@@ -5,7 +5,9 @@ template<
 > class queue;
 
 queue<int> q;
-q.front(); q.back();
-q.empty(); q.size();
+q.front(); // there is no q.top(); 
+q.back();
+q.empty(); 
+q.size();
 q.push(u); // push to the end of the queue
 void q.pop(); // remove the first element

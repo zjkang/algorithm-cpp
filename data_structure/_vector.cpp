@@ -1,4 +1,5 @@
 https://cplusplus.com/reference/vector/vector/
+https://en.cppreference.com/w/cpp/container/vector
 
 vector<int> v{1,3,2,4,5};
 sort(v.begin(), v.end()); // sort in ascending order
@@ -7,7 +8,6 @@ sort(v.rbegin(), v.rend()); // sort in descending order as it considers the last
 // and then order by ascending from the last to the first.
 
 vector<vector<int>> events;
-
 // differentiate type & object
 // cmp is function object (function pointer) 
 // decltype(cmp) is type or bool(*)(vector<int>&, vector<int>&b) is type
@@ -15,18 +15,21 @@ static bool cmp(vector<int>&a, vector<int>&b) {
     return a[1] < b[1];
 }
 sort(events.begin(), events.end(), cmp);
-// sorting by index 1
-sort(events.begin(), events.end(), [](auto &a, auto& b) { return a[1] < b[1]; }); 
+// lambda function: sorting by index 1
+auto cmp = [](auto &a, auto& b) { return a[1] < b[1]; };
+sort(events.begin(), events.end(), cmp); 
 
-vector<int> points;
 // greater<int> is type, greater<int>() is a operator function
-sort(points.begin(0, points.end(), greater<int>()); // sort by desc order
+vector<int> points;
+sort(points.begin(), points.end(), greater<int>()); // sort by descending order
+
 
 events.insert(events.begin(), events[0]); // insert
 events.push_back(); 
 events.pop_back();
 events.size();
 events.empty();
+
 
 #include <iostream>
 #include <vector>
@@ -83,4 +86,16 @@ vector<vector<int>> dimens(rows, vector<int>(cols, val));
 // 3d vector: can remove internal vector representation
 vector<vector<vector<double>>>
 vector dp(k + 1, vector(n, vector<double>(n, 0.0)));
+
+
+// deleting element while iterating
+vector<int> a{1,2,3,4,5,1,2};
+for (auto it = a.begin(); it != a.end(); ) {
+  if (*it == 2) {
+    it = a.erase(it); // the previous it iterator is invalidated
+  } else {
+    it++;
+  }
+}
+for (auto x : a) cout << x << endl;
 

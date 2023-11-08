@@ -5,7 +5,7 @@ https://github.com/wisdompeak/LeetCode/tree/master/Union_Find/1584.Min-Cost-to-C
 priority_queue的模板类尽量避免用vector
 避免使用vector（时空非常坑爹），改用定长数组array<int,N>这个数据结构
 // e.g. use array<int,3> instead of vector<int>
-priority_queue<array<int,3>, vector<array<int,3>>, greater<array<int,3>>>edges;
+priority_queue<array<int,3>, vector<array<int,3>>, greater<array<int,3>>>edges; // min-heap
 
 
 // defalt to max priority heap
@@ -27,6 +27,21 @@ std::priority_queue<int> q1; // Max priority queue
 for (int n : data) {
     q1.push(n);
 }
+
+
+priority_queue<int, vector<int>, greater<int>> pq; // min-heap
+pq.push(1);
+pq.push(2);
+pq.push(3);
+
+while (pq.size() > 0) {
+int num = pq.top(); pq.pop();
+cout << num << endl;
+}
+
+// 1
+// 2
+// 3
 
 
 // Min priority queue
@@ -98,7 +113,4 @@ int main()
  
     std::cout << "id: " << adaptor.top().id << '\n';
 }
-
-
-// ----------------------------------------------
 

@@ -1,3 +1,7 @@
+stoi(nums[i], 0, 2);        // string to int ->  binary string 1011 -> 11
+bitset<16>(11).to_string(); // int to bit int to string -> 11 -> binary string 1011
+
+
 const int MOD = 1e9 + 7;
 
 // int to long long

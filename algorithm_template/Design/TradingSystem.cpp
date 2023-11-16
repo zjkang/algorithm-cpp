@@ -1,5 +1,5 @@
-#include <iostream>
-# include<map>
+#include<iostream>
+#include<map>
 using namespace std;
 
 class TradingSystem {
@@ -14,26 +14,26 @@ public:
     // for (auto it = sellMap.begin(); it != sellMap.end();) {
     //     float s_price = it->first;
     //     int s_count = it->second;
-      for (auto [s_price, s_count] : sellMap) {
-          if (price >= s_price) {
-            int remain = num_of_product - s_count;
-            if (remain < 0) {
-              totalProfit += (price-s_price) * num_of_product;
-              sellMap[s_price] = -remain;
-              totalBuy += num_of_product;
-              num_of_product = 0;
-              // break;
-            } else {
-              totalProfit += (price-s_price) * s_count;
-              num_of_product = remain;
-              sellMap.erase(s_price);
-              // it = sellMap.erase(it);
-              totalBuy += s_count;
-            }
+    for (auto [s_price, s_count] : sellMap) {
+        if (price >= s_price) {
+          int remain = num_of_product - s_count;
+          if (remain < 0) {
+            totalProfit += (price-s_price) * num_of_product;
+            sellMap[s_price] = -remain;
+            totalBuy += num_of_product;
+            num_of_product = 0;
+            // break;
           } else {
-            break;
+            totalProfit += (price-s_price) * s_count;
+            num_of_product = remain;
+            sellMap.erase(s_price);
+            // it = sellMap.erase(it);
+            totalBuy += s_count;
           }
-      }
+        } else {
+          break;
+        }
+    }
 
     if (num_of_product > 0) {
       buyMap[price] = num_of_product;
@@ -48,7 +48,7 @@ public:
     // for (auto it = buyMap.begin(); it != buyMap.end();) {
     //   float b_price = it->first;
     //   int b_count = it->second;
-      for (auto [b_price, b_count] : buyMap) {
+    for (auto [b_price, b_count] : buyMap) {
       if (price <= b_price) {
         int remain = num_of_product - b_count;
         if (remain < 0) {

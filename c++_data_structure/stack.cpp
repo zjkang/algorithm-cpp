@@ -4,8 +4,10 @@ template<
     class Container = std::deque<T>
 > class stack;
 
+// stack apis
 stack<int> s;
 s.top();
-s.push(1); 
+s.push(1);
 s.pop();
-s.empty(); s.size();
+s.empty();
+s.size();

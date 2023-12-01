@@ -4,10 +4,11 @@ template<
     class Container = std::deque<T>
 > class queue;
 
+// queue apis
 queue<int> q;
-q.front(); // there is no q.top(); 
+q.front(); // there is no q.top();
 q.back();
-q.empty(); 
+q.empty();
 q.size();
 q.push(u); // push to the end of the queue
-void q.pop(); // remove the first element
+void q.pop(); // remove the first element, return void

@@ -15,8 +15,7 @@ int main() {
 //   cout << b.at(1) << "," << b.back() << "," << b.front() << endl;
 //   int min_val = *min_element(b.begin(), b.end());
 //   cout << min_val << endl;
-  
-  
+
   // cout << "-------- MAP ----------- " << endl;
   // map<int, int> c_map = {{2,1},{3,4},{1,2}};
   // for (auto kv : c_map) cout << kv.first << "," << kv.second << endl;

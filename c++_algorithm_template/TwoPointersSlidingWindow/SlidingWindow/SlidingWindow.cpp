@@ -43,7 +43,7 @@ void slidingWindow(string s, string t)
 // https://leetcode.com/problems/frequency-of-the-most-frequent-element/discuss/1175088/C++-Maximum-Sliding-Window-Cheatsheet-Template
 int slow = 0, fast = 0;
 int ans = 0;
-while (slow < fast) {
+while (fast < n) {
     // ... 1. CODE: use A[fast] to update state which might make the window invalid
     while (invalid(slow ... fast)) { // when invalid, keep shrinking the left edge until it's valid again
         // CODE: update state using A[slow]

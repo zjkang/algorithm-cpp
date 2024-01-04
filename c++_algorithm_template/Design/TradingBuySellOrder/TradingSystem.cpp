@@ -1,3 +1,8 @@
+// 这是我在citadel的面试题目，其实题目挺简单的，但是c++的代码明显练习不够
+// 基本思路是维护递增和递减的map，分别从小到大进行匹配，如果匹配成功(buy > sell)，
+// 实现利润，就可以完成交易
+
+
 #include<iostream>
 #include<map>
 using namespace std;
@@ -5,34 +10,32 @@ using namespace std;
 class TradingSystem {
 private:
   map<float, int> sellMap; // increasing order
-  map<float, int, greater<int>> buyMap; // decreasing order
+  map<float, int, greater<>> buyMap; // decreasing order
   float totalProfit = 0.0;
 
 public:
   int buy(int num_of_product, float price) {
     int totalBuy = 0;
-    // for (auto it = sellMap.begin(); it != sellMap.end();) {
-    //     float s_price = it->first;
-    //     int s_count = it->second;
-    for (auto [s_price, s_count] : sellMap) {
-        if (price >= s_price) {
-          int remain = num_of_product - s_count;
-          if (remain < 0) {
-            totalProfit += (price-s_price) * num_of_product;
-            sellMap[s_price] = -remain;
-            totalBuy += num_of_product;
-            num_of_product = 0;
-            // break;
-          } else {
-            totalProfit += (price-s_price) * s_count;
-            num_of_product = remain;
-            sellMap.erase(s_price);
-            // it = sellMap.erase(it);
-            totalBuy += s_count;
-          }
-        } else {
+    for (auto it = sellMap.begin(); it != sellMap.end();) {
+      float t_price = it->first;
+      int t_count = it->second;
+      if (price >= t_price) {
+        int remain = num_of_product - t_count;
+        if (remain < 0) {
+          totalProfit += (price-t_price) * num_of_product;
+          totalBuy += num_of_product;
+          num_of_product = 0;
+          sellMap[t_price] = -remain;
           break;
+        } else {
+          totalProfit += (price-t_price) * t_count;
+          totalBuy += t_count;
+          num_of_product = remain;
+          it = sellMap.erase(it);
         }
+      } else {
+        break;
+      }
     }
 
     if (num_of_product > 0) {
@@ -45,24 +48,22 @@ public:
 
   int sell(int num_of_product, float price) {
     int totalSell = 0;
-    // for (auto it = buyMap.begin(); it != buyMap.end();) {
-    //   float b_price = it->first;
-    //   int b_count = it->second;
-    for (auto [b_price, b_count] : buyMap) {
-      if (price <= b_price) {
-        int remain = num_of_product - b_count;
+    for (auto it = buyMap.begin(); it != buyMap.end();) {
+      float t_price = it->first;
+      int t_count = it->second;
+      if (price <= t_price) {
+        int remain = num_of_product - t_count;
         if (remain < 0) {
-          totalProfit += (b_price-price) * num_of_product;
-          buyMap[b_price] = -remain;
-          num_of_product = 0;
+          totalProfit += (t_price-price) * num_of_product;
           totalSell += num_of_product;
-          // break;
+          num_of_product = 0;
+          buyMap[t_price] = -remain;
+          break;
         } else {
-          totalProfit += (b_price-price) * b_count;
+          totalProfit += (t_price-price) * t_count;
+          totalSell += t_count;
           num_of_product = remain;
-          buyMap.erase(b_price);
-          // it = buyMap.erase(it);
-          totalSell += b_count;
+          it = buyMap.erase(it);
         }
       } else {
         break;

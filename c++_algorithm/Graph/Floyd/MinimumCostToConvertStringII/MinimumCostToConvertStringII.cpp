@@ -1,10 +1,12 @@
 // https://leetcode.com/problems/minimum-cost-to-convert-string-ii/
 // 2977. Minimum Cost to Convert String II
 
+// 参考了群主的视频 https://www.youtube.com/watch?v=pQ_gRovgx70
 // 1. str -> index: then do Floyd algorithm
 // 2. missing on corner case: when source[i] == target[i]: the min cost can be
 //    min(dp[i], dp[i-1])
 // 3. TLE/MLE: search from lenth set to avoid invalid search
+// 4. 群主使用了Trie来简化map.find(s)带来的搜索开销
 
 
 class Solution {

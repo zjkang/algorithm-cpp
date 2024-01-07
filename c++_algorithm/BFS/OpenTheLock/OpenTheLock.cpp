@@ -1,7 +1,8 @@
 // https://leetcode.com/problems/open-the-lock/
 // 752. Open the Lock
 
-// BFS on lock
+// BFS on lock, check on corner case on initial end (0000)
+
 class Solution {
 public:
     int openLock(vector<string>& deadends, string target) {

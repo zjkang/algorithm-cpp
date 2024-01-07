@@ -5,7 +5,7 @@ BFS应该是最常见的算法题目了，数据结构就是queue。
 灰‌色‌-‌进‌过‌queue‌ ‌
 黑‌色‌-‌出‌了‌queue
 
-有的时候我们会压缩成enqueued, or dequeued
+有的时候我们会压缩成enqueued or dequeued
 enqueued角度:
 白色 not enqueued,
 灰色或者黑色 enqueued    -> BFS

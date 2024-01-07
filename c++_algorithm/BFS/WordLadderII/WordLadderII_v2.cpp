@@ -1,4 +1,8 @@
+// https://leetcode.com/problems/word-ladder-ii/
+// 126. Word Ladder II
+
 // BFS + DFS (backtracking)
+
 class Solution {
 public:
     unordered_map<string,vector<string>> reverseMap;
@@ -52,7 +56,7 @@ public:
         for (vector<string>& curRes : res) {
             reverse(curRes.begin(), curRes.end()); // reverse each path
         }
-        return res; 
+        return res;
     }
 
     // directed graph traversal

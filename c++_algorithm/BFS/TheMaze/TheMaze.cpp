@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/the-maze/
 // 490. The Maze
 
+// BFS on maze; the next step on each bfs branch is the next valid position
 
 class Solution {
 public:

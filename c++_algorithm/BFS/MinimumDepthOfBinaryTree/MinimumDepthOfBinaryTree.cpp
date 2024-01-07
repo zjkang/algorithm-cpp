@@ -2,6 +2,7 @@
 // Minimum Depth of Binary Tree
 
 // BFS on binary tree
+
 class Solution {
 public:
     int minDepth(TreeNode* root) {

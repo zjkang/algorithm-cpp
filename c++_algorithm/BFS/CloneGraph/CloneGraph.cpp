@@ -1,6 +1,10 @@
 // https://leetcode.com/problems/clone-graph/
 // 133. Clone Graph
 
+// 2次遍历(DFS/BFS)
+// 遍历图保存新旧Node的mapping关系
+// 遍历clone图的表示
+
 /*
 // Definition for a Node.
 class Node {

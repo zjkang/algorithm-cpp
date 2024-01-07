@@ -1,7 +1,10 @@
 // https://leetcode.com/problems/is-graph-bipartite/
 // 785. Is Graph Bipartite?
 
-// BFS: neighbor color is the same or not
+// neighbor color is the same or not
+// find if neighbor color is populated or not or any conflict
+
+
 class Solution {
 public:
     bool isBipartite(vector<vector<int>>& graph) {

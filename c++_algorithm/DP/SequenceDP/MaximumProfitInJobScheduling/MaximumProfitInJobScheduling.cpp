@@ -20,6 +20,7 @@ public:
             }
             return l[1] < r[1];
         };
+        // sort by endTime
         sort(jobs.begin(), jobs.end(), cmp);
         vector<int> ends;
         for (auto& x: jobs) {

@@ -1,4 +1,7 @@
 
+#### 并查集模板
+
+```c++
 // Union Find template
 vector<int>Father;
 int N = s.size();
@@ -20,4 +23,4 @@ void Union(int x, int y) {
     else
         Father[x] = y;
 }
-
+```

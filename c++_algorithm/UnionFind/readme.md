@@ -1,16 +1,19 @@
 
 #### 并查集模板
 
+- connected components
+- minimum spanning tree
+
 ```c++
 // Union Find template
 vector<int>Father;
 int N = s.size();
 Father.resize(N);
-for (int i=0; i<N; i++)
+for (int i = 0; i < N; i++)
     Father[i] = i;
 
 int FindFather(int x) {
-    if (Father[x]!=x)
+    if (Father[x] != x)
         Father[x] = FindFather(Father[x]);
     return Father[x];
 }
@@ -18,7 +21,7 @@ int FindFather(int x) {
 void Union(int x, int y) {
     x = Father[x];
     y = Father[y];
-    if (x<y)
+    if (x < y)
         Father[y] = x;
     else
         Father[x] = y;

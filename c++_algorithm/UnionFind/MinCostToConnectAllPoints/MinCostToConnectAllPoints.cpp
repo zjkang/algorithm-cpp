@@ -1,20 +1,21 @@
 // https://leetcode.com/problems/min-cost-to-connect-all-points/
 // 1584. Min Cost to Connect All Points
 
+// Minimum Spanning Ttree
+
 class Solution {
 public:
-    // Minimum Spanning Ttree
     vector<int>Father;
 
     int minCostConnectPoints(vector<vector<int>>& points) {
         vector<vector<int>> distPoints;
         int N = points.size();
         Father.resize(N);
-        for (int i=0; i<N; i++)
+        for (int i = 0; i < N; i++)
             Father[i] = i;
 
         for (int i = 0; i < N; i++) {
-            for (int j = i+1; j < N; j++) {
+            for (int j = i + 1; j < N; j++) {
                 auto p1 = points[i];
                 auto p2 = points[j];
                 int dist = abs(p1[0] - p2[0]) + abs(p1[1] - p2[1]);
@@ -44,7 +45,7 @@ public:
     }
 
     int FindFather(int x) {
-        if (Father[x]!=x)
+        if (Father[x] != x)
             Father[x] = FindFather(Father[x]);
         return Father[x];
     }
@@ -52,7 +53,7 @@ public:
     void Union(int x, int y) {
         x = Father[x];
         y = Father[y];
-        if (x<y)
+        if (x < y)
             Father[y] = x;
         else
             Father[x] = y;

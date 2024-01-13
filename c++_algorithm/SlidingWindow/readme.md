@@ -1,8 +1,9 @@
-// Sliding Window 1
+### Sliding Window
 
-// Reference:
-// https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/hua-dong-chuang-kou-ji-qiao-jin-jie
-// 固定终点写法: 如果定义window，收缩window的条件，移动窗口的时机是难点
+
+模板一定有2种写法:固定起点或者固定终点。为了记忆，我采用了固定终点的写法
+
+固定终点写法: 如果定义window，收缩window的条件，移动窗口的时机是难点
 
 // left/right, slow/fast 2 pointers
 
@@ -55,5 +56,6 @@ while (fast < n) {
 return ans;
 
 
-// Other Sliding Windows
-// https://leetcode.com/list/?selectedList=5qymxb97
+Reference:
+https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/hua-dong-chuang-kou-ji-qiao-jin-jie
+https://leetcode.com/list/?selectedList=5qymxb97

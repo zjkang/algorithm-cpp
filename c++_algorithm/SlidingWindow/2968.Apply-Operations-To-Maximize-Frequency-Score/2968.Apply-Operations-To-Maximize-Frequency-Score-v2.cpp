@@ -1,7 +1,10 @@
 // https://leetcode.com/problems/apply-operations-to-maximize-frequency-score/
 // 2968. Apply Operations to Maximize Frequency Score
 
-// sliding window + median window + prefix sum
+// median: find the min cost within window [l, h]
+// sliding window: keep dynamic window [slow, fast] to calculate the cost
+// prefix sum: calculate interval sum
+// Time complexity: O(n)
 
 class Solution {
 public:
@@ -30,12 +33,12 @@ public:
 
     // slow 1,  ... , fast 5  5
     // slow 1, .... , fast 6. 6
-    LL calc(vector<int>& nums, vector<LL>& pre_sum, int slow, int fast) {
+    LL calc(vector<int>& nums, vector<LL>& pre_sum, LL slow, LL fast) {
         // median value
         int mid = (slow + fast)/2;
         int m_num = nums[mid]; // select median value
-        LL p1 = (long long)m_num*(mid-slow+1) - (pre_sum[mid]-(slow-1 < 0 ? 0 : pre_sum[slow-1]));
-        LL p2 = pre_sum[fast]-pre_sum[mid] - (long long)m_num*(fast-mid);
+        LL p1 = m_num*(mid-slow+1) - (pre_sum[mid]-(slow-1 < 0 ? 0 : pre_sum[slow-1]));
+        LL p2 = pre_sum[fast]-pre_sum[mid] - m_num*(fast-mid);
         return p1 + p2;
     }
 };

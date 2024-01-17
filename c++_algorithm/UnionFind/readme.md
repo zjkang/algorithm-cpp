@@ -1,6 +1,7 @@
 
-#### 并查集模板
+### 并查集模板
 
+并查集可以解决的问题有
 - connected components
 - minimum spanning tree
 

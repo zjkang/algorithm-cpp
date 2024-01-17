@@ -1,8 +1,7 @@
 // https://leetcode.com/problems/minimum-window-substring/
-// Minimum Window Substring
+// 76. Minimum Window Substring
 
-// Related questions
-// https://leetcode.com/list?selectedList=5qymxb97
+// 这道题思路一样，通过频率匹配来伸长和收缩窗口的大小
 
 class Solution {
 public:
@@ -11,6 +10,7 @@ public:
         vector<int> s_freq(256, 0);
         int num_s = s.size(), num_t = t.size();
         for (auto c : t) t_freq[c]++;
+
         int slow = 0, fast = 0;
         int count = 0;
         int resStart = -1, resEnd = -1;
@@ -22,9 +22,10 @@ public:
                 }
             }
 
-            while (count == num_t && slow <= fast) {
+            while (slow <= fast && count == num_t) {
                 if (resStart == -1 || fast - slow + 1 < resEnd - resStart + 1) {
-                    resStart = slow; resEnd = fast;
+                    resStart = slow;
+                    resEnd = fast;
                 }
                 if (s_freq[s[slow]] > 0) {
                     s_freq[s[slow]]--;

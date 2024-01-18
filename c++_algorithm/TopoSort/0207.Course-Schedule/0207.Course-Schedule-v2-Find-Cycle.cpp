@@ -1,8 +1,12 @@
 // https://leetcode.com/problems/course-schedule/
+// 207. Course Schedule
 
-// method 1: topo sort
+// top排序有的时候和dfs的找环等价
+// 这道题可以使用topo来写，另外一种方式是使用dfs找环
+// 这道题的dfs找环的解法需要visited的tag有两个值
+// visiting表示这个点已经访问，但是由这点扩展出来的connected component还没有全部完成
+// visited表示这个点以及扩展出来的connected component已经全部完成
 
-// method 2: find cycle in course-schedule
 class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
@@ -16,7 +20,7 @@ public:
             return graph;
         };
 
-        function<bool(int, map<int, vector<int>>&, vector<int>&)> isCycle = 
+        function<bool(int, map<int, vector<int>>&, vector<int>&)> isCycle =
             [&](auto course, auto& graph, auto& visited) { // must use & with reference to isCycle function
             if (visited[course] == 1) return false;
             if (visited[course] == 0) return true;

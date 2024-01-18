@@ -1,6 +1,8 @@
 // https://leetcode.com/problems/alien-dictionary/
 // 269. Alien Dictionary
 
+// topo sort
+
 class Solution {
 public:
     string alienOrder(vector<string>& words) {
@@ -23,7 +25,8 @@ public:
                     break;
                 }
             }
-            if (j == len && j < w1.size()) return ""; // add extra check for "abc" < "ab"
+            if (j == len && j < w1.size())
+                return ""; // add extra check for "abc" < "ab"
         }
 
         queue<char> queue;
@@ -35,7 +38,8 @@ public:
 
         string res;
         while (!queue.empty()) {
-            char c = queue.front(); queue.pop();
+            char c = queue.front();
+            queue.pop();
             res.push_back(c);
             for (auto nei : edges[c]) {
                 indegrees[nei]--;

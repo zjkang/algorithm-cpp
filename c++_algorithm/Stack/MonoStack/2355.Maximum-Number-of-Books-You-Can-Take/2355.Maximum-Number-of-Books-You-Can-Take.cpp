@@ -1,5 +1,5 @@
-https://leetcode.com/problems/maximum-number-of-books-you-can-take/
-2355. Maximum Number of Books You Can Take
+// https://leetcode.com/problems/maximum-number-of-books-you-can-take/
+// 2355. Maximum Number of Books You Can Take
 
 // refer to huifeng
 // https://www.youtube.com/watch?v=iJsbDfza-qk
@@ -10,7 +10,8 @@ class Solution {
 public:
     long long maximumBooks(vector<int>& books) {
         int n = books.size();
-        vector<LL> dp(n, 0); // dp[i]: the max books ending at position i
+        // dp[i]: the max books ending at position i
+        vector<LL> dp(n, 0);
         stack<LL> stack;
 
         LL ret = 0;

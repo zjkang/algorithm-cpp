@@ -1,13 +1,12 @@
 // https://leetcode.com/problems/sliding-window-maximum/
-// Sliding Window Maximum
-// Mono stack in desc
-
+// 239. Sliding Window Maximum
+// Mono deque in desc order
 
 class Solution {
 public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         vector<int> result;
-        deque<int> deque; // desc stack
+        deque<int> deque;
         for (size_t i = 0; i < nums.size(); i++) {
             while (!deque.empty() && nums[deque.back()] <= nums[i]) {
                 deque.pop_back();

@@ -5,6 +5,12 @@
 - [2976. Minimum Cost to Convert String I](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/2976.Minimum-Cost-to-Convert-String-I)
 - [2977. Minimum Cost to Convert String II](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/2977.Minimum-Cost-to-Convert-String-II)
 
+#### Graph Priority Queue
+- [0499. The Maze III](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0499.The-Maze-III)
+- [0505. The Maze II](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0505.The-Maze-II)
+- [0743. Network Delay Time](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0743.Network-Delay-Time)
+- [0787. Cheapest Flights Within K Stops](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0787.Cheapest-Flights-Within-K-Stops)
+
 #### Sliding Window
 - [0003. Longest Substring Without Repeating Characters](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/SlidingWindow/0003.Longest-Substring-Without-Repeating-Characters)
 - [0076. Minimum Window Substring](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/SlidingWindow/0076.Minimum-Window-Substring)

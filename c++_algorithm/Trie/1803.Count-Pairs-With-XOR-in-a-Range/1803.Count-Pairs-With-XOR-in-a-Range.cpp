@@ -1,7 +1,9 @@
 // https://leetcode.com/problems/count-pairs-with-xor-in-a-range/
 // 1803. Count Pairs With XOR in a Range
 
-// low <= nums[i] ^ nums[j] <= high for xor + trie + upper_bound
+// low <= nums[i] ^ nums[j] <= high for xor
+// trie
+// upper_bound
 // compare each bit for the threshold
 class Solution {
     class TrieNode

@@ -1,5 +1,3 @@
-// Trie template
-
 // https://leetcode.com/problems/implement-trie-ii-prefix-tree/
 // 1804. Implement Trie II (Prefix Tree)
 
@@ -16,11 +14,14 @@
 // have the string prefix as a prefix.
 // void erase(String word) Erases the string word from the trie.
 
+// Trie template
+// 基础的trie template的实现
+
 struct TrieNode {
     bool leaf = false;
     map<char, TrieNode*> children;
-    int count = 0;
-    int wordCount = 0;
+    int count = 0; // # of nodes under current node
+    int wordCount = 0; // # of words at leaf
 };
 
 class Trie {

@@ -1,5 +1,10 @@
 ### 算法的题目
 
+#### Graph Floyd
+- [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/1334.Find-the-City-With-the-Smallest-Number-of-Neighbors-at-a-Threshold-Distance)
+- [2976. Minimum Cost to Convert String I](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/2976.Minimum-Cost-to-Convert-String-I)
+- [2977. Minimum Cost to Convert String II](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/2977.Minimum-Cost-to-Convert-String-II)
+
 #### Sliding Window
 - [0003. Longest Substring Without Repeating Characters](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/SlidingWindow/0003.Longest-Substring-Without-Repeating-Characters)
 - [0076. Minimum Window Substring](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/SlidingWindow/0076.Minimum-Window-Substring)

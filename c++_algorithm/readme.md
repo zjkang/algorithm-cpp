@@ -1,5 +1,9 @@
 ### 算法的题目
 
+#### DP - MUltiDP
+- [0576.Out-of-Boundary-Paths](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/DP/MultiDP/0576.Out-of-Boundary-Paths)
+- [0688. Knight Probability in Chessboard](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/DP/MultiDP/0688.Knight-Probability-in-Chessboard)
+
 #### Graph Floyd
 - [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/1334.Find-the-City-With-the-Smallest-Number-of-Neighbors-at-a-Threshold-Distance)
 - [2976. Minimum Cost to Convert String I](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/2976.Minimum-Cost-to-Convert-String-I)

@@ -1,6 +1,6 @@
 ### 629.K-Inverse-Pairs-Array
 
-有一定难度的DP题。
+有一定难度的DP题。[照搬了群主的思路和解法](https://github.com/wisdompeak/LeetCode/tree/master/Dynamic_Programming/629.K-Inverse-Pairs-Array)
 
 约定dp[n][k]表示从1~n的任意排列中inverse pair数目为k的组合数目。
 ```

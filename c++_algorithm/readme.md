@@ -16,7 +16,7 @@
 - [0787. Cheapest Flights Within K Stops](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0787.Cheapest-Flights-Within-K-Stops)
 
 #### Pre Sum
-- [1074. Number of Submatrices That Sum to Target]()
+- [1074. Number of Submatrices That Sum to Target](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/PreSum/1074.Number-of-Submatrices-That-Sum-to-Target)
 
 
 #### Sliding Window

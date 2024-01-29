@@ -4,7 +4,6 @@
 // neighbor color is the same or not
 // find if neighbor color is populated or not or any conflict
 
-
 class Solution {
 public:
     bool isBipartite(vector<vector<int>>& graph) {

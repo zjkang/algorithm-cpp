@@ -14,16 +14,28 @@
 - [0576. Out-of-Boundary-Paths](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/DP/MultiDP/0576.Out-of-Boundary-Paths)
 - [0688. Knight Probability in Chessboard](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/DP/MultiDP/0688.Knight-Probability-in-Chessboard)
 
-#### Graph Floyd
+#### Graph - Floyd
 - [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/1334.Find-the-City-With-the-Smallest-Number-of-Neighbors-at-a-Threshold-Distance)
 - [2976. Minimum Cost to Convert String I](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/2976.Minimum-Cost-to-Convert-String-I)
 - [2977. Minimum Cost to Convert String II](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/Floyd/2977.Minimum-Cost-to-Convert-String-II)
 
-#### Graph Priority Queue
+#### Graph - Priority Queue
 - [0499. The Maze III](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0499.The-Maze-III)
 - [0505. The Maze II](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0505.The-Maze-II)
 - [0743. Network Delay Time](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0743.Network-Delay-Time)
 - [0787. Cheapest Flights Within K Stops](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Graph/PriorityQueue/0787.Cheapest-Flights-Within-K-Stops)
+
+#### Interval - Greedy
+- [0435. Non-overlapping Intervals](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/0435.Non-overlapping-Intervals)
+- [0452. Minimum Number of Arrows to Burst Balloons](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/0452.Minimum-Number-of-Arrows-to-Burst-Balloons)
+- [0646. Maximum Length of Pair Chain](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/0646.Maximum-Length-of-Pair-Chain)
+- [0757. Set Intersection Size At Least Two](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/0757.Set-Intersection-Size-At-Least-Two)
+- [1024. Video Stitching](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/1024.Video-Stitching)
+- [1288. Remove Covered Intervals](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/1288.Remove-Covered-Intervals)
+- [1326. Minimum Number of Taps to Open to Water a Garden](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/1326.Minimum-Number-of-Taps-to-Open-to-Water-a-Garden)
+- [2580. Count Ways to Group Overlapping Ranges](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/2580.Count-Ways-to-Group-Overlapping-Ranges)
+- [2589. Minimum Time to Complete All Tasks](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/2589.Minimum-Time-to-Complete-All-Tasks)
+- [2983. Palindrome Rearrangement Queries](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/Interval/Greedy/2983.Palindrome-Rearrangement-Queries)
 
 #### Pre Sum
 - [1074. Number of Submatrices That Sum to Target](https://github.com/zjkang/algorithm-cpp/tree/main/c%2B%2B_algorithm/PreSum/1074.Number-of-Submatrices-That-Sum-to-Target)

@@ -20,6 +20,7 @@ int FindFather(int x) {
 }
 
 void Union(int x, int y) {
+    if (FindFather(x)==FindFather(y)) return; // there is a bug w/o this statement when union with the same father
     x = Father[x];
     y = Father[y];
     if (x < y)
